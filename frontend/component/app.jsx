@@ -5,6 +5,7 @@ import Greeting from './greeting/greeting';
 import LoginFormContainer from '../component/session_form/login_form_container'
 import SignupFormContainer from "../component/session_form/signup_form_container"
 import { AuthRoute, ProtectedRoute } from '../util/route_util';
+import SplashContainer from './splash/splash_container';
 
 const App =() =>(
 
@@ -12,6 +13,7 @@ const App =() =>(
         <header>
             this is YEP!
             <Greeting/>
+            <SplashContainer/>
         </header>
         <Switch>
             <AuthRoute exact path="/login" component={LoginFormContainer}/>

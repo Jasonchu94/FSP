@@ -2,7 +2,6 @@ import React from 'react';
 import {Link} from "react-router-dom";
 
 const Greeting = ({currentUser, logout}) => {
-    // debugger
     const notLoggedIn = () => (
         <nav className="login-signup">
             <Link to="/login">Login</Link>
@@ -17,7 +16,7 @@ const Greeting = ({currentUser, logout}) => {
             <button onClick={logout}>Log Out</button>
         </div>
     );
-    // debugger
+
     return currentUser ? loggedIn() : notLoggedIn();
     // return loggedIn()
 };
