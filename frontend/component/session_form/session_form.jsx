@@ -29,19 +29,18 @@ class SessionForm extends React.Component{
     }
 
     showErrors(){
-        if (this.props.errors instanceof Array){
-
-            return(
+        
+        return(
                 <ul>
-                    {this.props.errors.map(error =>(
-                        <li>
+                    {this.props.errors.map((error,i) =>(
+                        <li key={i}>
                             {error}
                         </li>
                     ))}
                 </ul>
             )
-        }
     }
+    
     render(){
 
         if (this.props.formType === 'Login'){
@@ -75,7 +74,9 @@ class SessionForm extends React.Component{
                 <div className="login-form-container">
                     <br/>
                     Please {this.props.formType} or {this.props.navLink}
-                    {this.showErrors()}
+                    <div>
+                        {this.showErrors()}
+                    </div>
                 <form onSubmit={this.handleSubmit}>
                     <div className='login-form'>
                     <label>
