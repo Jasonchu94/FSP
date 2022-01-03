@@ -12,7 +12,7 @@ class Splash extends React.Component{
         return(
             <div>
                 <div className="clickable-logo-container">
-                    <Link to='/'> <img className="Splash-Logo" src='https://fontslogo.com/wp-content/uploads/2013/03/Yelp-Logo-Font.jpg'/> </Link>
+                    <Link to='/'> <img className="Splash-Logo" src={window.yeplogo}/> </Link>
                 </div>
 
             </div>
