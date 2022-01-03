@@ -16,6 +16,7 @@ const Greeting = ({currentUser, logout}) => {
             <button onClick={logout}>Log Out</button>
         </div>
     );
+    // debugger
 
     return currentUser ? loggedIn() : notLoggedIn();
     // return loggedIn()
