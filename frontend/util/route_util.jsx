@@ -3,13 +3,16 @@ import { connect} from 'react-redux';
 import { Route, Redirect, withRouter } from 'react-router-dom';
 
 const Auth = ({component: Component, path, LoggedIn, exact}) => (
-    <Route path={path} exact={exact} render={(props)=>(
-        !LoggedIn?(
-            <Component {...props}/>
-        ) : (
-            <Redirect to='/'/>
-        )
-    )} />
+    <Route 
+        path={path} 
+        exact={exact} 
+        render={props=>
+            !LoggedIn ?
+                <Component {...props}/>
+             : 
+                <Redirect to='/'/>
+            
+        } />
 );
 
 const ProtRoute = ({component: Component, path, LoggedIn, exact}) => (
@@ -22,7 +25,7 @@ const ProtRoute = ({component: Component, path, LoggedIn, exact}) => (
     )}/>
 );
 const mSTP = state => ({
-    loggedIn: Boolean(state.session.currentUser)
+    loggedIn: Boolean(state.session.id)
 });
 
 export const AuthRoute = withRouter(connect(mSTP)(Auth));
