@@ -14,6 +14,7 @@ class SessionForm extends React.Component{
         };
 
         this.handleSubmit = this.handleSubmit.bind(this);
+        this.demoLogin = this.demoLogin.bind(this)
     }
 
     componentWillUnmount(){
@@ -33,6 +34,14 @@ class SessionForm extends React.Component{
         this.props.action(user)
     }
 
+    demoLogin(e){
+        e.preventDefault();
+        let demoUser ={
+            email: "demo_user@aa.com",
+            password: "demo123",
+        }
+        this.props.demoLogin(demoUser)
+    }
     showErrors(){
         
         return(
@@ -78,7 +87,10 @@ class SessionForm extends React.Component{
             return(
                 <div className="login-form-container">
                     <br/>
-                    Please {this.props.formType} or {this.props.navLink}
+                    Please {this.props.formType} or {this.props.navLink} or login using our Demo
+                        <div className="demo-user">
+                            <button className='demo-button' onClick={this.demoLogin}>Login with Demo</button>
+                        </div>
                     <div>
                         {this.showErrors()}
                     </div>

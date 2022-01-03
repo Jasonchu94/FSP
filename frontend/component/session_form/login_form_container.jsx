@@ -12,7 +12,8 @@ const mSTP = ({errors}) => ({
 
 const mDTP = dispatch => ({
     action: user => dispatch(login(user)),
-    receiveErrors: errors => dispatch(receiveErrors(errors))
+    receiveErrors: errors => dispatch(receiveErrors(errors)),
+   
 })
 
 export default connect(mSTP,mDTP)(SessionForm)
