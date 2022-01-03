@@ -2,12 +2,12 @@ import React from 'react';
 import { connect} from 'react-redux';
 import { Route, Redirect, withRouter } from 'react-router-dom';
 
-const Auth = ({component: Component, path, LoggedIn, exact}) => (
+const Auth = ({component: Component, path, loggedIn, exact}) => (
     <Route 
         path={path} 
         exact={exact} 
         render={props=>
-            !LoggedIn ?
+            !loggedIn ?
                 <Component {...props}/>
              : 
                 <Redirect to='/'/>
@@ -15,9 +15,9 @@ const Auth = ({component: Component, path, LoggedIn, exact}) => (
         } />
 );
 
-const ProtRoute = ({component: Component, path, LoggedIn, exact}) => (
+const ProtRoute = ({component: Component, path, loggedIn, exact}) => (
     <Route path={path} exact = {exact} render ={(props) => (
-        LoggedIn ? (
+        loggedIn ? (
             <Component {...props}/>
         ): (
             <Redirect to="/login"/>
