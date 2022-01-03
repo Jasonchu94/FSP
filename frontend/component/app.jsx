@@ -1,7 +1,7 @@
 import React from 'react';
 
 import {Route, Routes, Link, Switch, HashRouter} from "react-router-dom"
-import Greeting from './greeting/greeting';
+import GreetingContainer from './greeting/greeting_container';
 import LoginFormContainer from '../component/session_form/login_form_container'
 import SignupFormContainer from "../component/session_form/signup_form_container"
 import { AuthRoute, ProtectedRoute } from '../util/route_util';
@@ -13,7 +13,7 @@ const App =() =>(
     <div>
         <header>
             this is YEP!
-            <Greeting/>
+            <GreetingContainer/>
             <SplashContainer/>
         </header>
         <Switch>
