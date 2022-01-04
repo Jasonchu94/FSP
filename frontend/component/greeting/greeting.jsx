@@ -3,12 +3,15 @@ import {Link} from "react-router-dom";
 
 const Greeting = ({currentUser, logout}) => {
     const notLoggedIn = () => (
-        <nav className="login-signup">
-            <Link to="/login">Login</Link>
-            &nbsp;
-            <Link to="signup">Sign Up</Link>
-        </nav>
+        <div className='greeting-container'>
+            <nav className="login-signup-container">
+                <Link to="/login" className='login-signup-button'>Login</Link>
+                &nbsp;
+                <Link to="signup" className='login-signup-button'>Sign Up</Link>
+            </nav>
+        </div>
     );
+
 
     const loggedIn = () => (
         <div>

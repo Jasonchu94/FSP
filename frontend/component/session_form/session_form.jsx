@@ -36,7 +36,7 @@ class SessionForm extends React.Component{
 
     demoLogin(e){
         e.preventDefault();
-        let demoUser ={
+        let demoUser = {
             email: "demo_user@aa.com",
             password: "demo123",
         }
@@ -59,7 +59,7 @@ class SessionForm extends React.Component{
 
         if (this.props.formType === 'Login'){
             return(
-                <div>
+                <div className="login-form-container">
                      Please {this.props.formType} or {this.props.navLink}
                     {this.showErrors()}
                     <form onSubmit={this.handleSubmit}>

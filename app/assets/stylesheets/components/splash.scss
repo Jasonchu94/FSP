@@ -1,3 +1,17 @@
 .splash-container{
-    padding-top: 10px;
+
+    .splash-image-container{
+        display: flex;
+        position: absolute;
+        height: 600px;
+        width: 100vw;
+
+        .splash-background-image{
+            height: auto;
+            position: absolute;
+            opacity: .1;
+        }
+    }
+
+ 
 }
