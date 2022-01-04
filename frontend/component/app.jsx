@@ -1,17 +1,17 @@
 import React from 'react';
 
 import {Route, Routes, Link, Switch, HashRouter} from "react-router-dom"
-import GreetingContainer from './greeting/greeting_container';
+import { AuthRoute, ProtectedRoute } from '../util/route_util';
 import LoginFormContainer from '../component/session_form/login_form_container'
 import SignupFormContainer from "../component/session_form/signup_form_container"
-import { AuthRoute, ProtectedRoute } from '../util/route_util';
 import SplashContainer from './splash/splash_container';
+import NavBarContainer from "../component/nav_bar/nav_bar_container"
 import  About  from './about/about';
 
 const App =() =>(
 
     <div>    
-        <GreetingContainer/>
+        <NavBarContainer/>
         <Switch>
             <Route exact path='/' component={SplashContainer}/>   
             <AuthRoute exact path="/login" component={LoginFormContainer}/>
