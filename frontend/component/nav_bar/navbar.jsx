@@ -12,10 +12,10 @@ const Navbar= ({currentUser, logout}) => {
             <button onClick={logout}>Log Out</button>
         </div>
     ) : (      
-            <div className="login-signup-container">
-                <Link to="/login" className='login-signup-button'>Login</Link>
+            <div className="login-signup-buttons">
+                <Link to="/login" >Login</Link>
                 &nbsp;
-                <Link to="/signup" className='login-signup-button'>Sign Up</Link>
+                <Link to="/signup" >Sign Up</Link>
             </div>
     )
 

@@ -35,6 +35,9 @@
 }
 
 .splash-container{
+    display: flex;
+    justify-content: space-between;
+    width: 100%;
     .splash-background-image{
         display: flex;
         width: 100%;
@@ -47,27 +50,28 @@
             height: 50%;
         }
     }
+    .search-logo-container{
+        display: flex;
+        margin-top: 100px;
+        width: 100%;
+        flex-direction: column;
+        margin-left: 40%;
+  
+    }
 }
 
 //splash
 
 .nav-bar{
     position: absolute;
-    display: flex;
-    justify-content: space-around;
-    align-items: center;
     align-content: center;
-    .nav-links{
-        display: flex;
-        justify-content: space-between;
+    display: flex;
+    margin-top: 50px;
+    justify-content: space-evenly;
+    width: 100%;
 
-        .right-nav-bar{
-            display: flex;
-            align-items: center;
-            justify-content: flex-end;
-        }
-    }
 }
+
 
 .search-logo-container{
     display: flex;
@@ -78,30 +82,19 @@
 }
 
 .footer-container{
-    display: flex;
-    align-items: baseline;
-    justify-content: space-around;
         a {
             font-size: 16px;
 
     }
 }
-.footer-label{
+
+// search bar
+.search-logo-container{
     display: flex;
-    flex-direction: column;
-    align-self:flex-end;
-    margin-top: 900px;
-    margin-left: 900px;
-    text-decoration: underline;
-    a {
-        color: gray;
-        .footer-links{
-            display: flex;
-            flex-direction: column;
-        }
-    }
+    justify-content: space-between;
 }
-//login-sign-form
+
+//login-signuo-form
 
 .login-picture-form-container{
     display: flex;

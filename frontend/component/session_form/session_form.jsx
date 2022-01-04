@@ -126,52 +126,56 @@ class SessionForm extends React.Component{
                                     <div className="demo-user">
                                         <button className='demo-button' onClick={this.demoLogin}>Login with Demo</button>
                                     </div>
-                                
+                                <span className='or-divider'>OR</span>
                                 <form onSubmit={this.handleSubmit}>
                                 <div className='login-form'>
-                                <label>
+                                    <label>
                                         First name:
-                                        <input
-                                            type="text"
-                                            value={this.state.first_name}
-                                            onChange ={this.update('first_name')}
-                                            placeholder='first'
-                                        />
+                                            <input
+                                                type="text"
+                                                value={this.state.first_name}
+                                                onChange ={this.update('first_name')}
+                                                placeholder='first'
+                                            />
                                     </label>
+                                    <br></br>
                                     <label>
                                         Last name:
-                                        <input
-                                            type="text"
-                                            value={this.state.last_name}
-                                            onChange ={this.update('last_name')}
-                                            placeholder='last'
-                                        />
+                                            <input
+                                                type="text"
+                                                value={this.state.last_name}
+                                                onChange ={this.update('last_name')}
+                                                placeholder='last'
+                                            />
                                     </label>
+                                    <br></br>
                                     <label>
                                         Email:
-                                        <input
-                                            type="text"
-                                            value={this.state.email}
-                                            onChange={this.update('email')}
-                                            placeholder='email' />
+                                            <input
+                                                type="text"
+                                                value={this.state.email}
+                                                onChange={this.update('email')}
+                                                placeholder='email' />
                                     </label>
+                                    <br></br>
                                     <label>
                                         Password:
-                                        <input
-                                            type="password"
-                                            value={this.state.password}
-                                            onChange={this.update('password')}
-                                            placeholder='password' />
+                                            <input
+                                                type="password"
+                                                value={this.state.password}
+                                                onChange={this.update('password')}
+                                                placeholder='password' />
                                     </label>
+                                    <br></br>
                                     <label>
                                         Birthday:
-                                        <input
-                                            type="date"
-                                            value={this.state.birthday}
-                                            onChange ={this.update('birthday')}
-                                        />
+                                            <input
+                                                type="date"
+                                                value={this.state.birthday}
+                                                onChange ={this.update('birthday')}
+                                            />
                                     </label>
-                                    </div>
+                                </div>
                                     <button className='SignupButton' type='submit'>Sign Up</button>
                                 </form>
                                 <span>Already on YEP? {this.props.navLink}</span>

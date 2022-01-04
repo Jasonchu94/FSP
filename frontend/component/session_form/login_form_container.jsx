@@ -13,6 +13,7 @@ const mSTP = ({errors}) => ({
 const mDTP = dispatch => ({
     action: user => dispatch(login(user)),
     receiveErrors: errors => dispatch(receiveErrors(errors)),
+    demoLogin: user => dispatch(login(user))
    
 })
 

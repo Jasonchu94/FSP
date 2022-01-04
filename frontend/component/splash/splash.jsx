@@ -12,10 +12,13 @@ class Splash extends React.Component{
                     <img src={window.splash} className='background-image'/>
                 </div>
                 <div className="search-logo-container">
-                    <Link to='/'> <img className="splash-logo" src={window.yeplogo}/> </Link>
-                    <SearchBar/>
+                    <div>
+                        <Link to='/'> <img className="splash-logo" src={window.yeplogo}/> </Link>
+                    </div>
+                    <div>
+                        <SearchBar/>    
+                    </div>
                 </div>
-                <About/>
 
             </div>
         )
