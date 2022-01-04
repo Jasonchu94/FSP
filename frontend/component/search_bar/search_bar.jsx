@@ -16,12 +16,15 @@ class SearchBar extends React.Component{
     render(){
         return(
             <form className='search-bar'>
-                <span className='input-find'>Find</span>
-                <input type='text' placeholder='nail salons, plumbers, takeout...'></input>
-                <span className='input-near'>Near</span>
-                <input type = "text" placeholder='San Jose, CA 95132'></input>
-                <button type='submit' className='search-submit'></button>
-
+                <label className='find-box'>
+                    <span className='find-text'>Find</span>
+                    <input className='input-field'type='text' placeholder='nail salons, plumbers, takeout...'></input>
+                </label>
+                <label className='near-box'>
+                    <span className='near-text'>Near</span>
+                    <input className='input-near'type = "text" placeholder='San Jose, CA 95132'></input>
+                </label>
+                    <button type='submit' className='search-submit'>🔍</button>
             </form>
         )
     }
