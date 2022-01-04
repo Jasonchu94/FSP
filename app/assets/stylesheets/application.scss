@@ -19,6 +19,7 @@
 @import "base/base.scss";
 //  //Components
 @import "components/splash.scss";
+@import 'components/login-sign-form.scss';
 
 .login-signup-container{
     display: flex;
@@ -72,8 +73,28 @@
     margin-top: 900px;
     margin-left: 900px;
     text-decoration: underline;
-    .footer-links{
-        display: flex;
-        flex-direction: column;
+    a {
+        color: gray;
+        .footer-links{
+            display: flex;
+            flex-direction: column;
+        }
     }
+}
+
+//login-sign-form
+
+
+.login-form-container{
+    background-color: white;
+}
+
+.top-home-bar{
+    background-color: red;
+    display: flex;
+    justify-content: center;
+    .yep-logo{
+        width: 250px;
+    }
+
 }
