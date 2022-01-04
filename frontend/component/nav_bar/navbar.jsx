@@ -15,7 +15,7 @@ const Navbar= ({currentUser, logout}) => {
             <div className="login-signup-container">
                 <Link to="/login" className='login-signup-button'>Login</Link>
                 &nbsp;
-                <Link to="signup" className='login-signup-button'>Sign Up</Link>
+                <Link to="/signup" className='login-signup-button'>Sign Up</Link>
             </div>
     )
 
@@ -30,7 +30,7 @@ const Navbar= ({currentUser, logout}) => {
                 &nbsp;
                 <Link>Yelp for Business</Link>
             </div>
-            <div class='right-nav-bar'>
+            <div className='right-nav-bar'>
                 {display}
             </div>
 
