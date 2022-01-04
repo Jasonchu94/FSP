@@ -94,7 +94,7 @@
     justify-content: space-between;
 }
 
-//login-signuo-form
+//login-signup-form
 
 .login-picture-form-container{
     display: flex;
@@ -102,11 +102,12 @@
     .login-form-container{
         margin-top: 100px;
         margin-left: 100px;
-        width: 50%;
+        width: 20%;
         height: 200px;
         display: flex;
         justify-content: space-between;
         flex-direction: column;
+        align-items: center;
     }
 }
 
@@ -124,13 +125,27 @@
 
 }
 
+.or-divider{
+    color: #333;
+    &:before, &:after{
+        content: "";
+        height: 1px;
+        background-color: #333;
+        flex: 1;
+        &:before{
+            margin-right: 5px;
+        }
+    }
+}
+
 
 .signup-form-container{
     display: flex;
     justify-content: space-evenly;
+    margin-top: 100px;
 
     .form-for-login{
-        width: 50%;
+        width: 20%;
         height: 200px;
     }
 }
