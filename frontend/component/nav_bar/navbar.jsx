@@ -21,10 +21,13 @@ const Navbar= ({currentUser, logout}) => {
 
     return (
         <div className='nav-bar'>
-            <div>
+            <div className="nav-links">
                 <Link>Write a Review</Link>
+                &nbsp;
                 <Link>Events</Link>
+                &nbsp;
                 <Link>Talk</Link>
+                &nbsp;
                 <Link>Yelp for Business</Link>
             </div>
             <div class='right-nav-bar'>
