@@ -10,7 +10,7 @@ class Splash extends React.Component{
 
     render(){
         return(
-            <div>
+            <div className="splash-container">
                 <div className="clickable-logo-container">
                     <Link to='/'> <img className="Splash-Logo" src={window.yeplogo}/> </Link>
                 </div>
