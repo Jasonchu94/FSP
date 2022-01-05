@@ -77,9 +77,8 @@ class SessionForm extends React.Component{
                             <div className="demo-user">
                                     <button className='demo-button' onClick={this.demoLogin}>Demo User</button>
                             </div>
-                                <hr/>-------------- OR --------------
-                            <div>
-                                
+                            <div className='or-divider'>
+                            -------------- OR --------------                                
                             </div>
                             <form className='login-form'onSubmit={this.handleSubmit}>
                                 <input
@@ -116,13 +115,16 @@ class SessionForm extends React.Component{
                         <div className="signup-form-container">
                             <br/>
                             <div className='form-for-login'>
-                                <span className='signup1'>Sign up for Yelp</span>
-                                <br></br>
+                                <span className='signup1'>Sign up for Yelp</span>                                
                                 <span className='signup2'>Connect with great local businesses</span>
-                                    <div className="demo-user">
-                                        <button className='demo-button' onClick={this.demoLogin}>Login with Demo</button>
-                                    </div>                                   
-                                        -------------- OR --------------                                   
+                                <div className="demo-user">
+                                    <button className='demo-button' onClick={this.demoLogin}>Login with Demo</button>
+                                </div>       
+                                                            
+                                <div className='or-divider'>
+                                -------------- OR --------------                                
+                                </div>   
+                                                               
                                 <form onSubmit={this.handleSubmit}>
                                 <div className='signup-form'>
                                     

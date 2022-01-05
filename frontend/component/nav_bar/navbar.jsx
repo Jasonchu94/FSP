@@ -1,15 +1,13 @@
 import React from 'react';
 import { Link } from 'react-router-dom';
+import NavBarDropdown from './navbar_dropdown';
 
 const Navbar= ({currentUser, logout}) => {
 
     const display = currentUser ? (
         <div className='navbar-dropdown'>
-            <button className ='navbar-dropdown-button'></button>
-            <div>
-                {/* <p>{currentUser.first_name.at(0).toUpperCase() + currentUser.first_name.slice(1)}{currentUser.last_name.at(0).toUpperCase()}</p> */}
-            </div>
-            <button onClick={logout}>Log Out</button>
+            <span className='navbar-drop-arrow'></span>
+            <NavBarDropdown logout={logout} currentUser={currentUser}/>
         </div>
     ) : (      
             <div className="login-signup-buttons">

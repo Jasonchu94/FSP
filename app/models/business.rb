@@ -27,7 +27,7 @@
 #  index_business_pages_on_name       (name)
 #
 
-class BusinessPage < ApplicationRecord
+class Business < ApplicationRecord
 
     validates :name, :address, :state, :city, :zipcode, :opentime, :closetime, :phone_number, :latitude, :longitude, presence: true
 

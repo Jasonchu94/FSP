@@ -89,3 +89,24 @@
     width: 35px;
     
 }
+
+.navbar_dropdown{
+    display: inline-block;
+    .navbar_dropdown-button{
+        cursor: pointer;
+    }
+}
+
+
+.dropdown-container{
+    display: flex;
+    .profile-pic{
+        width: 40px;
+    }
+}
+.dropdown-container2{
+    > *{
+        display: flex;
+    }
+}
+
