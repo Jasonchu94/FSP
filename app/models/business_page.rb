@@ -29,7 +29,7 @@
 
 class BusinessPage < ApplicationRecord
 
-    validates :name, :address, :state, :city, :zipcode, :opentime, :closetime, :phone_number, :latitude, :longitude
+    validates :name, :address, :state, :city, :zipcode, :opentime, :closetime, :phone_number, :latitude, :longitude, presence: true
 
     #has_many :reviews
 end
