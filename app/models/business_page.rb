@@ -30,4 +30,6 @@
 class BusinessPage < ApplicationRecord
 
     validates :name, :address, :state, :city, :zipcode, :opentime, :closetime, :phone_number, :latitude, :longitude
+
+    #has_many :reviews
 end
