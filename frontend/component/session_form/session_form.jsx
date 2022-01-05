@@ -48,7 +48,7 @@ class SessionForm extends React.Component{
         return(
                 <ul>
                     {this.props.errors.map((error,i) =>(
-                        <li key={i}>
+                        <li className='login-errors' key={i}>
                             {error}
                         </li>
                     ))}
@@ -68,20 +68,20 @@ class SessionForm extends React.Component{
                     <div className='login-picture-form-container'>
 
                         <div className="login-form-container">
-                            <span>
+                            <span className='login1'>
                                 {this.props.formType} to Yep    
                             </span>
-                            <span>
-                                New to Yelp? {this.props.navLink}   
+                            <span className='login2'>
+                                New to Yep? {this.props.navLink}   
                             </span>
                             <div className="demo-user">
-                                    <button className='demo-button' onClick={this.demoLogin}>Login with Demo</button>
+                                    <button className='demo-button' onClick={this.demoLogin}>Demo User</button>
                             </div>
-                            <span className='or-divider'>OR</span>
+                                <hr/>-------------- OR --------------
                             <div>
                                 
                             </div>
-                            <form onSubmit={this.handleSubmit}>
+                            <form className='login-form'onSubmit={this.handleSubmit}>
                                 <input
                                         type="text"
                                         value={this.state.email}
@@ -96,7 +96,7 @@ class SessionForm extends React.Component{
                                         onChange={this.update('password')}
                                         placeholder='Password' />
                                 <br></br>
-                                <button className="loginButton" type='submit'>Log In</button>
+                                <button className="login-button" type='submit'>Log In</button>
                             </form>
                         </div>
                         <div className='login-right'>
@@ -116,15 +116,15 @@ class SessionForm extends React.Component{
                         <div className="signup-form-container">
                             <br/>
                             <div className='form-for-login'>
-                                <span>Sign up for Yelp</span>
+                                <span className='signup1'>Sign up for Yelp</span>
                                 <br></br>
-                                <span>Connect with great local businesses</span>
+                                <span className='signup2'>Connect with great local businesses</span>
                                     <div className="demo-user">
                                         <button className='demo-button' onClick={this.demoLogin}>Login with Demo</button>
-                                    </div>
-                                <span className='or-divider'>OR</span>
+                                    </div>                                   
+                                        -------------- OR --------------                                   
                                 <form onSubmit={this.handleSubmit}>
-                                <div className='login-form'>
+                                <div className='signup-form'>
                                     
                                       
                                             <input
@@ -172,9 +172,12 @@ class SessionForm extends React.Component{
                                             />
 
                                 </div>
-                                    <button className='SignupButton' type='submit'>Sign Up</button>
+                                <div className='signup-button-container'>
+                                    <button className='signup-button' type='submit'>Sign Up</button>
+
+                                </div>
                                 </form>
-                                <span>Already on YEP? {this.props.navLink}</span>
+                                <span className="have-user">Already on YEP? {this.props.navLink}</span>
 
                             </div>
 

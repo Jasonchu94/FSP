@@ -4,10 +4,10 @@ import { Link } from 'react-router-dom';
 const Navbar= ({currentUser, logout}) => {
 
     const display = currentUser ? (
-        <div className='navbar-container'>
+        <div className='navbar-dropdown'>
             <button className ='navbar-dropdown-button'></button>
-            <div className = 'greeting-container'>
-                <h2>Hello, {currentUser.first_name.charAt(0).toUpperCase() + currentUser.first_name.slice(1)}</h2>
+            <div>
+                {/* <p>{currentUser.first_name.at(0).toUpperCase() + currentUser.first_name.slice(1)}{currentUser.last_name.at(0).toUpperCase()}</p> */}
             </div>
             <button onClick={logout}>Log Out</button>
         </div>
@@ -15,7 +15,7 @@ const Navbar= ({currentUser, logout}) => {
             <div className="login-signup-buttons">
                 <Link to="/login" >Login</Link>
                 &nbsp;
-                <Link to="/signup" >Sign Up</Link>
+                <Link to="/signup" className='signup-button'>Sign Up</Link>
             </div>
     )
 

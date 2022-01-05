@@ -1,0 +1,91 @@
+.nav-bar{
+    position: absolute;
+    align-content: center;
+    display: flex;
+    margin-top: 50px;
+    justify-content: space-evenly;
+    width: 100%;
+    font-family: Arial, Helvetica, sans-serif;
+    // font-family: $main-font;
+    .nav-links >*{
+        color: #FFF;
+        font-weight: bold;
+        text-decoration: none;
+    }
+}
+.login-signup-buttons > *{
+    color: #FFF;
+    font-weight: bold;
+    text-decoration: none;
+    padding: 8px;
+}
+
+.login-signup-buttons :last-child{
+    border: 1px white solid;
+}
+
+//search bar
+
+.search-bar{
+    display: flex;
+    flex-wrap: wrap;
+    width: 100%;
+}
+
+.find-box{
+    display: flex;
+    align-items: center;
+    font-size: 14pt;
+    width: 450px;
+    .find-text{
+        color: gray;
+        background-color: white;
+        font-family: Arial, Helvetica, sans-serif;
+        font-weight: bold;
+        height: 27px;
+        display: flex;
+        align-items: center;
+    }
+    .input-field{
+        width: 100%;
+        border:none;
+        font-family: Arial, Helvetica, sans-serif;
+        height: 25px;
+        
+    }
+}
+.near-box{
+    display: flex;
+    align-items: center;
+    font-size: 14pt;
+    // border-radius: 3px;
+
+    .near-text{
+        color: gray;
+        background-color: white;
+        font-family: Arial, Helvetica, sans-serif;
+        font-weight: bold;
+        height: 27px;
+        display: flex;
+        align-items: center;
+    }
+}
+.input-near{
+        width: 100%;
+        border: none;
+        font-family: Arial, Helvetica, sans-serif;
+        height: 25px;
+        display: flex;
+        align-items: center;
+        border-radius: 3px;
+}
+.search-submit{
+    background-color: red;
+    .search-submit >img:first-child{
+        width: 200px;
+    }
+}
+.glass {
+    width: 35px;
+    
+}

@@ -24,7 +24,7 @@ class SearchBar extends React.Component{
                     <span className='near-text'>Near</span>
                     <input className='input-near'type = "text" placeholder='San Jose, CA 95132'></input>
                 </div>
-                    <button type='submit' className='search-submit'>🔍</button>
+                    <button type='submit' className='search-submit'><img className='glass' src={window.magnifying}></img></button>
             </form>
         )
     }
