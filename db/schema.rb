@@ -10,12 +10,12 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 2022_01_05_212718) do
+ActiveRecord::Schema.define(version: 2022_01_05_223533) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
 
-  create_table "business", force: :cascade do |t|
+  create_table "businesses", force: :cascade do |t|
     t.string "name", null: false
     t.string "address", null: false
     t.string "state", null: false
@@ -26,15 +26,15 @@ ActiveRecord::Schema.define(version: 2022_01_05_212718) do
     t.string "phone_number", null: false
     t.string "website"
     t.integer "price", null: false
-    t.string "categories", null: false
     t.float "latitude", null: false
     t.float "longitude", null: false
     t.datetime "created_at", precision: 6, null: false
     t.datetime "updated_at", precision: 6, null: false
-    t.index ["address"], name: "index_business_on_address"
-    t.index ["latitude"], name: "index_business_on_latitude"
-    t.index ["longitude"], name: "index_business_on_longitude"
-    t.index ["name"], name: "index_business_on_name"
+    t.string "categories", array: true
+    t.index ["address"], name: "index_businesses_on_address"
+    t.index ["latitude"], name: "index_businesses_on_latitude"
+    t.index ["longitude"], name: "index_businesses_on_longitude"
+    t.index ["name"], name: "index_businesses_on_name"
   end
 
   create_table "users", force: :cascade do |t|
