@@ -2,6 +2,7 @@ import React from 'react';
 import { Link } from 'react-router-dom';
 import SearchBar from '../search_bar/search_bar'
 import NavBarDropdown from '../nav_bar/navbar_dropdown'
+import BusinessIndexItem from './business_index_item'
 class BusinessIndex extends React.Component{
 
     constructor(props){
@@ -9,9 +10,11 @@ class BusinessIndex extends React.Component{
     }
 
     componentDidMount(){
-        this.props.fetchBusinesses();
+      this.props.fetchBusinesses();
     }
     render(){
+
+        const {businesses} = this.props
         return(
             <div className='business-index-container'>               
                     <div className='business-nav-bar'>
@@ -26,16 +29,27 @@ class BusinessIndex extends React.Component{
                         </div>)
                         }
                     </div>
-              
-                <div className='business-photos-container'>
-               
-                </div>
-                <div className='busiess-review-container'>
-               
-                </div>
-                <div className='info-sidebar'>
-               
-                </div>
+                    <div className='business-list-container'> 
+                        <div className='business-filter'>
+                            
+                        </div>
+                        <div className='business-list'>
+                            <h1 className='results'>All results</h1>
+                            { businesses.map(business => (
+                                <BusinessIndexItem
+                                business = {business}
+                                key = {business.id}
+                                businesses = {businesses}                                
+                                />                            
+                                ))
+                            }                           
+                        </div>
+                        <div className='business-map'>
+
+                        </div>
+
+                    </div>
+          
 
             </div>
         )

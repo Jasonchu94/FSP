@@ -10,7 +10,7 @@ import About from './about/about';
 
 
 const App =() =>(
-
+   
     <div>    
         <Switch>
             <Route exact path='/' component={SplashContainer}/>   
