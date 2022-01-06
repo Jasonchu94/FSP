@@ -2,7 +2,7 @@ import React from 'react';
 import { Link } from 'react-router-dom';
 import NavBarContainer from '../nav_bar/nav_bar_container'
 import SearchBar from '../search_bar/search_bar';
-
+import NavBarDropdown from '../nav_bar/navbar_dropdown';
 class Splash extends React.Component{
     render(){
         return(

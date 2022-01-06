@@ -1,4 +1,5 @@
 import React from 'react';
+import { withRouter } from 'react-router';
 
 class NavBarDropdown extends React.Component{
 
@@ -17,14 +18,20 @@ class NavBarDropdown extends React.Component{
     }
     render (){
         const {currentUser} = this.props
+        let image = "▼"
+        let profile = window.profile
+        if (this.props.icon) {
+            image = <img className='profile-pic' src={window.profile}></img>
+            profile = '';
+        }
         return(
 
-            <div>
-                <button onFocus={this.focus} onBlur={this.focus}>▼
+            <div className='dropdown-container'>
+                <button className='dropdown-button'onFocus={this.focus} onBlur={this.focus}>{image}
                     <ul onClick={e =>e.stopPropagation()} className={this.state.show ? 'show' : 'clear'}>
                         <div className='dropdown-container'>
-                            <img className='profile-pic' src={window.profile}></img>
-                            <li>
+                            <img className='profile-pic' src={profile}></img>
+                            <li className='profile-name'>
                                 {currentUser.first_name.charAt(0).toUpperCase() + currentUser.first_name.slice(1)} {currentUser.last_name.charAt(0).toUpperCase() + "."}
                             </li>                            
                         </div>
