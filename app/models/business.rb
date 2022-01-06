@@ -34,4 +34,6 @@ class Business < ApplicationRecord
      :latitude, :longitude, presence: true
 
     #has_many :reviews 
+
+    has_one_attached :photo
 end
