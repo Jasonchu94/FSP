@@ -19,7 +19,7 @@ const App =() =>(
             <Route exact path = '/businesses' component={BusinessIndexContainer}/>
             {/* <Route exact path ='/businesses/:businessId'/>   */}
         </Switch>   
-        <About/>
+        {/* <About/> */}
      
     </div>
 

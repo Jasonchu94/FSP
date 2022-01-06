@@ -31,7 +31,7 @@ class BusinessIndex extends React.Component{
                     </div>
                     <div className='business-list-container'> 
                         <div className='business-filter'>
-                            
+                            FILTER HERE
                         </div>
                         <div className='business-list'>
                             <h1 className='results'>All results</h1>
@@ -45,7 +45,7 @@ class BusinessIndex extends React.Component{
                             }                           
                         </div>
                         <div className='business-map'>
-
+                            EL MAP HERE
                         </div>
 
                     </div>
