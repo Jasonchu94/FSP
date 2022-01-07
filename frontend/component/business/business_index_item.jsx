@@ -10,14 +10,16 @@ class BusinessIndexItem extends React.Component{
     handleClick(){
         this.props.history.push(`businesses/${this.props.business.id}`)
     }
+
+   
     render(){
         const {business, businesses} = this.props
-        // debugger
+        let n = Math.floor(Math.random()*business.photoUrls.length)
         return(
             <div className='business-index-item-container' onClick={this.handleClick}>
                 <div className='business-index-item'>
                     <div className='business-image'>
-                        WOW IMAGE HERE
+                        <img className='index-image'src={business.photoUrls[n]}></img>
                     </div>
                     <div className='business-info-container'>
                         <div className='business-name'>
@@ -25,7 +27,7 @@ class BusinessIndexItem extends React.Component{
                         </div>
             
                         <div className='rating-image'>
-                             RATING IMAGE
+                             <img src={window.rating1}></img>
                              How many ratings
                         </div>
 
@@ -40,7 +42,8 @@ class BusinessIndexItem extends React.Component{
                         </div>
                        
                     </div>
-                </div>        
+                </div> 
+                <br></br>       
             </div>
         )
     }

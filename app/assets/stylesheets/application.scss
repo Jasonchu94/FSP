@@ -24,38 +24,4 @@
 @import 'components/about.scss';
 @import 'components/business.scss';
 // business component
-.business-list-container{
-    border-top: solid 1px gray;
-    margin-top: 3%;
-    display: flex;
-    justify-content: space-between;
-    height: 100%;
-    padding-right: 5%;
-    > *{
-        font-family: $main-font;
-    }
- 
-    .business-filter{
-        border: 1px solid black;
-        width: 20%;
-    }
-    .results{
-        width: 50%;
-        height: 50%;
-    }
-    .business-list{
-        // border: 1px solid red;
-        width: 40%;
-    
-        .business-index-item{
-            border: 1px solid lightgray;
-            display: flex;
-        }
-    }
-    .business-map{
-        border: 1px solid green;
-        width: 30%;
-    }
-}
-
 

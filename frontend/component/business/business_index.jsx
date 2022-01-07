@@ -15,11 +15,12 @@ class BusinessIndex extends React.Component{
     render(){
 
         const {businesses} = this.props
+    
         return(
             <div className='business-index-container'>               
                     <div className='business-nav-bar'>
                         <Link to='/'><img className='splash-logo' src={window.yeplogo}></img></Link>
-                        <SearchBar/>
+                        <SearchBar class={"business"}/>
                         {this.props.currentUser ? 
                         (<NavBarDropdown currentUser ={this.props.currentUser} logout={this.props.logout} icon={true}/>) :
                         (<div className="login-signup-buttons">

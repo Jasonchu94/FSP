@@ -11,7 +11,7 @@ import About from './about/about';
 
 const App =() =>(
    
-    <div>    
+    <div className='app'>    
         <Switch>
             <Route exact path='/' component={SplashContainer}/>   
             <AuthRoute exact path="/login" component={LoginFormContainer}/>

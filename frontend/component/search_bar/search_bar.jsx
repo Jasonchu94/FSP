@@ -28,7 +28,7 @@ class SearchBar extends React.Component{
 
     render(){
         return(
-            <form className='search-bar' onClick={this.handleSubmit}>
+            <form className={this.props.class ? 'business-search-bar' : 'search-bar'} onClick={this.handleSubmit}>
                 <div className='find-box'>
                     <span className='find-text'>Find</span>
                     <input className='input-field'type='text' placeholder='nail salons, plumbers, takeout...'></input>
