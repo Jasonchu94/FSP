@@ -1,3 +1,4 @@
-json.set @business.id do
-    json.partial! 'api/business_pages/business' business: @business
+json.set! @business.id do
+    json.partial! 'business', business: @business
 end
+

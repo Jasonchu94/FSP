@@ -65,6 +65,7 @@ GEM
     annotate (2.6.5)
       activerecord (>= 2.3.0)
       rake (>= 0.8.7)
+    autoprefixer (0.0.1)
     aws-eventstream (1.2.0)
     aws-partitions (1.545.0)
     aws-sdk-core (3.125.1)
@@ -231,6 +232,7 @@ PLATFORMS
 
 DEPENDENCIES
   annotate
+  autoprefixer
   aws-sdk-s3
   bcrypt (~> 3.1.7)
   better_errors

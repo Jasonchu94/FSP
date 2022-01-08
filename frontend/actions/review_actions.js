@@ -7,7 +7,7 @@ export const RECEIEVE_ERRORS_REVIEW = 'RECEIEVE_ERRORS_REVIEW';
 export const CLEAR_ERRORS_REVIEW = 'CLEAR_ERRORS_REVIEW';
 
 const receiveReviews = reviews => ({
-    type: RECEIEVE_REVIEWS,
+    type: RECEIVE_REVIEWS,
     reviews
 })
 
@@ -48,7 +48,7 @@ export const createReview = review => dispatch => (
             )
 )
 
-export const removeReview = reviewId => dispatch => (
+export const deleteReview = reviewId => dispatch => (
     ReviewAPIUtil.deleteReview(reviewId)
         .then(
             reviewId => dispatch(removeReview(reviewId)),

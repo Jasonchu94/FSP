@@ -7,14 +7,76 @@
 #   Character.create(name: "Luke", movie: movies.first)
 
 require 'open-uri'
+#ApplicationRecordconnection.reset_pk_sequence!('table_name') reset primary keys
 
 User.destroy_all
+ApplicationRecord.connection.reset_pk_sequence!('users')
 Business.destroy_all
+ApplicationRecord.connection.reset_pk_sequence!('businesses')
+Review.destroy_all
+ApplicationRecord.connection.reset_pk_sequence!('reviews')
 demo_user = User.create!(
     email: "demo_user1@aa.com",
     password: "demo123",
     first_name: "demo",
     last_name: "user",
+    birthday: "01/01/0001"
+)
+
+u1=User.create!(
+    email: "user1",
+    password: "password",
+    first_name:"Isabelle",
+    last_name:"Nunya",
+    birthday: "01/01/0001"
+)
+u2=User.create!(
+    email: "user2",
+    password: "password",
+    first_name:"Jonesy",
+    last_name:"Jones",
+    birthday: "01/01/0001"
+)
+u3=User.create!(
+    email: "user23",
+    password: "password",
+    first_name:"Becky",
+    last_name:"Lol",
+    birthday: "01/01/0001"
+)
+u4=User.create!(
+    email: "user24",
+    password: "password",
+    first_name:"Andrew",
+    last_name:"Zeta",
+    birthday: "01/01/0001"
+)
+u5=User.create!(
+    email: "user25",
+    password: "password",
+    first_name:"Holy",
+    last_name:"Moly",
+    birthday: "01/01/0001"
+)
+u6=User.create!(
+    email: "user6",
+    password: "password",
+    first_name:"Spooderman",
+    last_name:"spidey",
+    birthday: "01/01/0001"
+)
+u7=User.create!(
+    email: "user27",
+    password: "password",
+    first_name:"Tom",
+    last_name:"H",
+    birthday: "01/01/0001"
+)
+u8=User.create!(
+    email: "user28",
+    password: "password",
+    first_name:"Zendaya",
+    last_name:"Jane",
     birthday: "01/01/0001"
 )
 
@@ -149,3 +211,70 @@ b5.photos.attach(io: somi2, filename: 'Somi2.jpg')
 b5.photos.attach(io: somi3, filename: 'Somi3.jpg')
 b5.photos.attach(io: somi4, filename: 'Somi4.jpg')
 b5.photos.attach(io: somi5, filename: 'Somi5.jpg')
+
+reveiw1 = Review.create!(
+    body: "this place was really awesome!",
+    rating: 5,
+    user_id: u1.id,
+    business_id: b2.id
+)
+reveiw2 = Review.create!(
+    body: "the cheese foam here is to die for",
+    rating: 5,
+    user_id: u2.id,
+    business_id: b2.id
+)
+reveiw3 = Review.create!(
+    body: "I received a half eaten burger here",
+    rating: 1,
+    user_id: u3.id,
+    business_id: b1.id
+)
+reveiw4 = Review.create!(
+    body: "Just the same burger place as usual, broken ice cream machine.",
+    rating: 3,
+    user_id: u4.id,
+    business_id: b1.id
+)
+reveiw5 = Review.create!(
+    body: "You can never go wrong with half mozarella half sausage, extra sugar!",
+    rating: 5,
+    user_id: u5.id,
+    business_id: b3.id
+)
+reveiw6 = Review.create!(
+    body: "Yummy snack but kind of pricey",
+    rating: 4,
+    user_id: u6.id,
+    business_id: b3.id
+)
+reveiw7 = Review.create!(
+    body: "OMG YOU NEED TO COME HERE AND GET THE GALBIJJIM WITH CHEESE!!!",
+    rating: 5,
+    user_id: u7.id,
+    business_id: b4.id
+)
+reveiw8 = Review.create!(
+    body: "Perfect dessert place after going to Daeho!!",
+    rating: 5,
+    user_id: u7.id,
+    business_id: b5.id
+)
+reveiw9 = Review.create!(
+    body: "Expect a long wait but it is more than worth it!",
+    rating: 4.5,
+    user_id: u8.id,
+    business_id: b4.id
+)
+reveiw10 = Review.create!(
+    body: "This place has cheese taiyaki, trust me I know it sounds weird but it's the best grilled cheese i've had!",
+    rating: 4,
+    user_id: u1.id,
+    business_id: b5.id
+)
+reveiw11 = Review.create!(
+    body: "the cheese pull at this place is just unbelievably satisfying",
+    rating: 4,
+    user_id: u2.id,
+    business_id: b3.id
+)

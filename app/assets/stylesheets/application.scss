@@ -25,3 +25,46 @@
 @import 'components/business.scss';
 // business component
 
+.business-show-container{
+    display: flex;
+    flex-direction: column;
+    overflow-x: hidden;
+}
+
+.business-show-nav-bar{
+    display: flex;
+    padding-top: 10%;
+    >form{
+        > button{
+            // display: flex;
+            // align-items: flex-end;
+            // margin-left: 140px;
+            >img{
+                height: 100%;
+                width: 100%;
+            }
+        }
+
+    }
+}
+
+// business show container
+.business-show-photo-slider-container{
+    width: 100%;
+    display: flex;
+    overflow: hidden;
+    .business-show-info{
+        > * {
+            display: flex;
+            flex-direction: column ;
+        }
+    }
+}
+.photo-slider{
+    display: flex;
+    width: 80%;
+    > img {
+        width: 33%;
+    }
+}
+

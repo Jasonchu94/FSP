@@ -33,7 +33,9 @@ class Business < ApplicationRecord
     :opentime, :closetime, :phone_number,
      :latitude, :longitude, presence: true
 
-    #has_many :reviews 
+    has_many :reviews, 
+    foreign_key: :business_id,
+    class_name: :Review
 
     has_many_attached :photos
 end

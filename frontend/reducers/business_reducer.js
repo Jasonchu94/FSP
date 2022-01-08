@@ -6,7 +6,7 @@ const businessReducer = (oldState={}, action) => {
         case RECEIVE_ALL_BUSINESSES:
             return action.businesses;
         case RECEIVE_BUSINESS:
-            let nextState = Object.assign({}, oldState, {[action.business.id]: action.business})
+            let nextState = Object.assign({}, oldState, action.business)
             return nextState;        
         default:
             return oldState;

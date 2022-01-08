@@ -1,5 +1,5 @@
 import React from 'react';
-import { withRouter } from 'react-router';
+import { withRouter } from 'react-router-dom';
 class BusinessIndexItem extends React.Component{
 
     constructor(props){
@@ -23,7 +23,7 @@ class BusinessIndexItem extends React.Component{
                     </div>
                     <div className='business-info-container'>
                         <div className='business-name'>
-                            {businesses.indexOf(business) + 1 }.{business.name}
+                            {business.id}.{business.name}
                         </div>
             
                         <div className='rating-image'>
@@ -49,4 +49,4 @@ class BusinessIndexItem extends React.Component{
     }
 }
 
-export default (BusinessIndexItem);
+export default withRouter(BusinessIndexItem);

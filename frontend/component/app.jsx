@@ -6,6 +6,7 @@ import LoginFormContainer from '../component/session_form/login_form_container'
 import SignupFormContainer from "../component/session_form/signup_form_container"
 import SplashContainer from './splash/splash_container';
 import BusinessIndexContainer from './business/business_index_container'
+import BusinessShowContainer from './business/business_show_container'
 import About from './about/about';
 
 
@@ -17,7 +18,7 @@ const App =() =>(
             <AuthRoute exact path="/login" component={LoginFormContainer}/>
             <AuthRoute exact path='/signup' component={SignupFormContainer}/>
             <Route exact path = '/businesses' component={BusinessIndexContainer}/>
-            {/* <Route exact path ='/businesses/:businessId'/>   */}
+            <Route exact path ='/businesses/:businessId' component={BusinessShowContainer}/>  
         </Switch>   
         {/* <About/> */}
      
