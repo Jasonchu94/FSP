@@ -23,14 +23,7 @@ class BusinessShow extends React.Component{
                     <div className='business-show-nav-bar'>
                             <Link to='/'><img className='splash-logo' src={window.yeplogo}></img></Link>
                             <SearchBar class={"business-show"}/>
-                            {this.props.currentUser ? 
-                            (<NavBarDropdown currentUser ={this.props.currentUser} logout={this.props.logout} icon={true}/>) :
-                            (<div className="business-show-buttons">
-                                <Link to="/login" className='login-button' >Login</Link>
-                                &nbsp;
-                                <Link to="/signup" className='signup-button'>Sign Up</Link>
-                            </div>)
-                            }
+                            <NavBarDropdown currentUser ={this.props.currentUser} logout={this.props.logout} icon={true}/>
                     </div>
                     <div className='business-show-photo-slider-container'>
                         <div className='photo-slider'>

@@ -5,14 +5,14 @@
 //     background-size: cover;
 // }
 $main-font: Arial, Helvetica, sans-serif;
+.clear{
+    display: none;
+}
 
 .show {
     display: block;
 }
 
-.clear{
-    display: none;
-}
 .splash-logo{
     width: 250px;
 }
