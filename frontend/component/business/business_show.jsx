@@ -26,7 +26,7 @@ class BusinessShow extends React.Component{
                             {this.props.currentUser ? 
                             (<NavBarDropdown currentUser ={this.props.currentUser} logout={this.props.logout} icon={true}/>) :
                             (<div className="business-show-buttons">
-                                <Link to="/login" >Login</Link>
+                                <Link to="/login" className='login-button' >Login</Link>
                                 &nbsp;
                                 <Link to="/signup" className='signup-button'>Sign Up</Link>
                             </div>)
@@ -40,6 +40,7 @@ class BusinessShow extends React.Component{
                         </div>
                         <div className='business-show-info'>
                             <h1>{business.name}</h1>
+
                         </div>
                     </div>
                     <ReviewList fetchReviews={this.props.fetchReviews}/>

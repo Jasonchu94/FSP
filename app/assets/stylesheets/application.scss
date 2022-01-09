@@ -33,18 +33,51 @@
 
 .business-show-nav-bar{
     display: flex;
-    padding-top: 10%;
+    padding-top: 2%;
     >form{
         > button{
-            // display: flex;
-            // align-items: flex-end;
-            // margin-left: 140px;
+
             >img{
                 height: 100%;
                 width: 100%;
             }
         }
 
+    }
+    .dropdown-container{
+        height: 40px;
+        width: 40px;
+        padding-left: 160px;
+        z-index: 10;
+        .dropdown-button{
+            height: 35px;
+            > img{
+                height: 100%;
+
+            }
+        
+        }
+    }
+}
+.business-show-buttons{
+    padding-left: 10%;
+    a{
+        width: 200%;
+        height: 200%;
+    }
+    >*{
+        text-decoration: none;
+    }
+    > :first-child {
+        color: black;
+        border: 1px solid grey;
+        border-radius: 3px;
+    }
+    > :last-child{
+        color: white;
+        background-color: red;
+        border: 1px solid red;
+        border-radius: 3px;
     }
 }
 
