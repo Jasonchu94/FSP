@@ -58,9 +58,7 @@ class BusinessIndexItem extends React.Component{
                         </div>
                         <br></br>
                         <div className='business-categories'>
-                            {business.categories.map(category=>(
-                                `${category.charAt(0).toUpperCase() + category.slice(1)} `
-                            ))}
+                        {business.categories.map((category, key) => category.charAt(0).toUpperCase() + category.slice(1) + (key===business.categories.length-1 ? "" : ", "))}
                         </div>
                         <br></br>
                         <div className='random-review'>

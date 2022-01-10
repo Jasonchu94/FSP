@@ -68,12 +68,11 @@ class BusinessShow extends React.Component{
                             ))}
                         </div>
                         <div className='business-show-info'>
-                            <h1 className='business-show-name'>{business.name}</h1>
-                    
+                            <h1 className='business-show-name'>{business.name}</h1>                    
                             <div className='business-rating'>{this.ratingPhoto(this.getRating(business))}&nbsp;&nbsp;{this.totalReviews} reviews</div>
                                 <br></br>
                             <div className='business-price'> {business.price} &bull; {business.categories.map((category, key) => category.charAt(0).toUpperCase() + category.slice(1) + (key===business.categories.length-1 ? "" : ", "))} </div>
-                                <br></br>
+                            <br></br>
                             <div className='business-hours'> {this.businessTime()}</div>
 
                         </div>

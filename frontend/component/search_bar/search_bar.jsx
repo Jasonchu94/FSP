@@ -23,21 +23,22 @@ class SearchBar extends React.Component{
 
     handleSubmit(e){
         e.preventDefault();
-        this.props.history.push('/businesses')
+        if (this.state.find === '' && this.state.near === '') return this.props.history.push('/businesses')
+        this.props.history.push(`/search?find=${this.state.find}near=${this.state.near}`)
     }
 
     render(){
         return(
             <div>
 
-                <form className={this.props.class ? 'business-search-bar' : 'search-bar'}>
+                <form className={this.props.class ? `${this.props.class}-search-bar` : 'search-bar'}>
                     <div className='find-box'>
                         <span className='find-text'>Find</span>
-                        <input className='input-field'type='text' placeholder='nail salons, plumbers, takeout...'></input>
+                        <input className='input-field'type='text' placeholder='nail salons, plumbers, takeout...' onChange={this.update('find')}></input>
                     </div>
                     <div className='near-box'>
                         <span className='near-text'>Near</span>
-                        <input className='input-near'type = "text" placeholder='San Jose, CA 95132'></input>
+                        <input className='input-near'type = "text" placeholder='San Jose, CA 95132' onChange={this.update('near')}></input>
                     </div>
 
                         <button 
