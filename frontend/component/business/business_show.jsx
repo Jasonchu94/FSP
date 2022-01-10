@@ -34,7 +34,7 @@ class BusinessShow extends React.Component{
             totalRating += review.rating,
             this.totalReviews +=1
         ))
-        // debugger
+     
         return (totalRating/this.totalReviews);
     }
 
@@ -52,14 +52,14 @@ class BusinessShow extends React.Component{
 
     render(){
         const {business} = this.props
-        // debugger
+      
         if (business){
             return(
-                <div className='business-show-container'>
-                    <div className='business-show-nav-bar'>
-                            <Link to='/'><img className='splash-logo' src={window.yeplogo}></img></Link>
-                            <SearchBar class={"business-show"}/>
-                            <NavBarDropdown currentUser ={this.props.currentUser} logout={this.props.logout} icon={true}/>
+                <div className='business-index-container'>
+                    <div className='business-nav-bar'>
+                        <Link to='/'><img className='splash-logo' src={window.yeplogo}></img></Link>
+                        <SearchBar class={"business"}/>                        
+                        <NavBarDropdown currentUser ={this.props.currentUser} logout={this.props.logout} icon={true}/>
                     </div>
                     <div className='business-show-photo-slider-container'>
                         <div className='photo-slider'>
@@ -77,8 +77,10 @@ class BusinessShow extends React.Component{
 
                         </div>
                     </div>
-                    <div className='business-show-review-container'>                        
-                        <button className='review-button'>Write a Review</button>
+                    <div className='business-show-review-container'>
+                        <div className='write-review-container'>
+                            <button className='review-button'>Write a Review</button>                            
+                        </div>                        
                         <p className='location-title'>Location & Hours</p>
                         <div className='location-and-hours'>                                                   
                             <div className='map'><img src={window.daeho}></img></div>

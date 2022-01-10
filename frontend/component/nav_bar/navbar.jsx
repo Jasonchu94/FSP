@@ -2,7 +2,7 @@ import React from 'react';
 import { Link } from 'react-router-dom';
 import NavBarDropdown from './navbar_dropdown';
 
-const Navbar= ({currentUser, logout}) => {
+const Navbar= ({currentUser, logout, notSplash}) => {
 
     const display = currentUser ? (
         <div className='navbar-dropdown'>
@@ -11,9 +11,9 @@ const Navbar= ({currentUser, logout}) => {
         </div>
     ) : (      
             <div className="login-signup-buttons">
-                <Link to="/login" >Login</Link>
+                <Link to="/login" className={notSplash ? 'business-login-button' : 'login-button'}>Login</Link>
                 &nbsp;
-                <Link to="/signup" className='signup-button'>Sign Up</Link>
+                <Link to="/signup" className={notSplash ? 'business-signup-button' : 'signup-button'}>Sign Up</Link>
             </div>
     )
 

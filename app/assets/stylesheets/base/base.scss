@@ -16,3 +16,35 @@ $main-font: Arial, Helvetica, sans-serif;
 .splash-logo{
     width: 200px;
 }
+
+.login-signup-buttons{
+    display: flex;
+    padding-left: 15%;
+    width: 100%;
+    height: 75%;
+}
+.login-signup-buttons :last-child{
+    border: 1px white solid;
+    height: 15px;
+}
+
+.business-login-button{
+    border: 1px solid gray;
+    color: black;
+    background-color: white;
+    height: 40px;
+    width: 90px;
+    font-family: $main-font;
+    font-size: 16px;
+    
+}
+
+.business-signup-button{
+    border: 1px solid red;
+    background-color: red;
+    color: white;
+    height: 40px;
+    width: 90px;
+    font-family: $main-font;
+    font-size: 16px;
+}

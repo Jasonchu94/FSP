@@ -109,7 +109,7 @@ class SessionForm extends React.Component{
             return(
                 <div>
                     <div className='top-home-bar'> 
-                        <Link to='/'> <img className="yep-logo" src={window.yeplogo}/> </Link>
+                        <Link to='/'> <img className="yep-logo" src={window.yeplogowhite}/> </Link>
                     </div>
                     <span className='login-errors'>{this.showErrors()}</span>
                         <div className="signup-form-container">

@@ -10,57 +10,77 @@ class SearchResult extends React.Component{
         super(props)
        
         this.filterSearch = this.filterSearch.bind(this);
+        this.clearSearchResults = this.clearSearchResults.bind(this);
+        this.searchResults = [];
     }
 
     componentWillMount(){
         this.props.fetchReviews();
         this.props.fetchBusinesses();
     }
+    componentWillUnmount(){
+        this.clearSearchResults();
+    }
 
+    clearSearchResults(){
+        this.searchResults = [];
+    }
+   
     
     filterSearch(){
         const {location, businesses} = this.props
     
         let url = location.search.split("?find=")    
         let [find, near] = url[1].split('near=')
-        let searchResults = [];
+       
     
         if (this.props.businesses){
         businesses.map(business => {   
             if (business.name.toLowerCase().includes(find)  
                 ||
-            business.address.toLowerCase().includes(near) && near !=='') searchResults.push(business)
+            business.address.toLowerCase().includes(near) && near !=='' && !this.searchReults.includes(business.id)) this.searchResults.push(business)
             
 
-        })}  
-        return searchResults
+        })}      
+        if (this.searchResults.length !== 0){
+        
+            return(
+                this.searchResults.map(business => (
+                    <BusinessIndexItem business={business} key={business.id} businesses={businesses} search={this.searchResults}/>
+                )       
+                )
+                
+            )
+        }else {
+            return( 
+                <div>
+                    No results found with those search terms
+                </div>
+            )
+        }
+        
+        
     }
     render(){
         const {business, businesses} = this.props
-        // debugger
+  
         return(
-            <div>
-                 <div className='search-result-nav-bar'>
+            <div className='business-index-container'>
+                  <div className='business-nav-bar'>
                         <Link to='/'><img className='splash-logo' src={window.yeplogo}></img></Link>
-                        <SearchBar class={"search"}/>
-                        {this.props.currentUser ? 
-                            (<NavBarDropdown currentUser ={this.props.currentUser} logout={this.props.logout} icon={true}/>)
-                         :
-                            (<div className="login-signup-buttons">
-                                <Link to="/login" >Login</Link>
-                                &nbsp;
-                                <Link to="/signup" className='signup-button'>Sign Up</Link>
-                            </div>)
-                        }
+                        <SearchBar class={"business"}/>                        
+                        <NavBarDropdown currentUser ={this.props.currentUser} logout={this.props.logout} icon={true} search={this.searchResults}/>
+                        
+                        
                     </div>
                     <div className='business-list-container'>
                         <div className='business-filter'>Filter HERE</div>
                         <div className='business-list'>
                     
                             <h1 className='results'>All Results</h1>
-                            {this.filterSearch().map(business => (
-                                <BusinessIndexItem business={business} key={business.id} businesses={businesses}/>
-                            ))}
+                            {this.filterSearch()}        
+                            {this.searchResults=[]}          
+    
 
                         </div>
                         <div className='business-map'>

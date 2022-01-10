@@ -33,11 +33,11 @@ class SearchBar extends React.Component{
 
                 <form className={this.props.class ? `${this.props.class}-search-bar` : 'search-bar'}>
                     <div className='find-box'>
-                        <span className='find-text'>Find</span>
+                        <span className='find-text'>{ this.props.class? '' : 'Find'}</span>
                         <input className='input-field'type='text' placeholder='nail salons, plumbers, takeout...' onChange={this.update('find')}></input>
                     </div>
                     <div className='near-box'>
-                        <span className='near-text'>Near</span>
+                        <span className='near-text'>{ this.props.class? '' : 'Near'}</span>
                         <input className='input-near'type = "text" placeholder='San Jose, CA 95132' onChange={this.update('near')}></input>
                     </div>
 

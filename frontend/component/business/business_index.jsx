@@ -20,15 +20,10 @@ class BusinessIndex extends React.Component{
             <div className='business-index-container'>               
                     <div className='business-nav-bar'>
                         <Link to='/'><img className='splash-logo' src={window.yeplogo}></img></Link>
-                        <SearchBar class={"business"}/>
-                        {this.props.currentUser ? 
-                        (<NavBarDropdown currentUser ={this.props.currentUser} logout={this.props.logout} icon={true}/>) :
-                        (<div className="login-signup-buttons">
-                            <Link to="/login" >Login</Link>
-                            &nbsp;
-                            <Link to="/signup" className='signup-button'>Sign Up</Link>
-                        </div>)
-                        }
+                        <SearchBar class={"business"}/>                       
+                        <NavBarDropdown currentUser ={this.props.currentUser} logout={this.props.logout} icon={true} />
+                       
+                        
                     </div>
                     <div className='business-list-container'> 
                         <div className='business-filter'>

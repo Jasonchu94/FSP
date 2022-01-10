@@ -32,15 +32,15 @@ class BusinessIndexItem extends React.Component{
             totalRating += review.rating,
             this.totalReviews +=1
         ))
-        // debugger
+ 
         return (totalRating/this.totalReviews);
     }
    
     render(){
-        const {business, businesses} = this.props
+        const {business, businesses, search} = this.props
         let n = Math.floor(Math.random()*business.photoUrls.length)
         let m = Math.floor(Math.random()*business.reviews.length)
-
+       
         return(
             <div className='business-index-item-container' onClick={this.handleClick}>
                 <div className='business-index-item'>
@@ -49,11 +49,12 @@ class BusinessIndexItem extends React.Component{
                     </div>
                     <div className='business-info-container'>
                         <div className='business-name'>
-                            {business.id}.{business.name}
+                            
+                            {search ? search.indexOf(business)+1 : business.id}.{business.name}
                         </div>
                         <br></br>
                         <div className='rating-image'>
-                            {this.ratingPhoto(this.getRating(business))}
+                            {this.ratingPhoto(this.getRating(business))}&nbsp;
                             {this.totalReviews}
                         </div>
                         <br></br>

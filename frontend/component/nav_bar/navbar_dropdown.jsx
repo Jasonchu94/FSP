@@ -57,12 +57,13 @@ class NavBarDropdown extends React.Component{
             }
             else {
                 return(
-                    <div>
+                    <div className='business-login-signup'>
                         <Link to='/login'>
-                            <button className='login-button'>Login</button>
+                            <button className='business-login-button'>Login</button>
                         </Link>
+                        &nbsp;&nbsp;&nbsp;
                         <Link to='/signup'>
-                            <button className='signup-button'>Sign Up</button>
+                            <button className='business-signup-button'>Sign Up</button>
                         </Link>
 
 

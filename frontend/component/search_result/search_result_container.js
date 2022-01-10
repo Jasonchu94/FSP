@@ -3,6 +3,7 @@ import { connect } from 'react-redux';
 
 import { getBusinesses } from '../../actions/business_actions';
 import { fetchReviews } from '../../actions/review_actions';
+import {logout} from '../../actions/session_actions'
 import SearchResult from './search_result';
 
 const mSTP = state => ({
@@ -12,6 +13,7 @@ const mSTP = state => ({
 })
 
 const mDTP = dispatch => ({
+    logout: () => dispatch(logout()),
     fetchBusinesses: () => dispatch(getBusinesses()),
     fetchReviews: () => dispatch(fetchReviews())
 })
