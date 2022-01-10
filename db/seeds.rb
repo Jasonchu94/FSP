@@ -86,11 +86,11 @@ b1 = Business.create!(
     state: 'CA',
     city: 'San Jose',
     zipcode: 95125,
-    opentime: 7,
-    closetime: 4,
+    opentime: 6,
+    closetime: 22,
     phone_number: '(408) 279-0824',
     website: "www.mcdonalds.com",
-    price: 1,
+    price: "$",
     latitude: 37.302950,
     longitude: -121.868400,
     categories: ['fast food', 'burgers', 'lunch', 'cheap', 'american']
@@ -106,7 +106,7 @@ b2 = Business.create!(
     closetime: 21,
     phone_number: '(408) 642-1384',
     website: "www.tan-cha.net",
-    price: 2,
+    price: "$$",
     latitude: 37.339040,
     longitude: -121.974500,
     categories: ['beverages', 'dessert', 'milk tea', 'boba', 'chinese']
@@ -121,7 +121,7 @@ b3 = Business.create!(
     opentime: 11,
     closetime: 21,
     phone_number: '(408) 931-6487',
-    price: 1,
+    price: "$",
     latitude: 37.324990,
     longitude: -122.010750,
     categories: ['fast food', 'korean', 'hot dogs', 'savory', 'sweet']
@@ -136,7 +136,7 @@ b4 = Business.create!(
     opentime: 11,
     closetime: 21,
     phone_number: '(408) 770-3778',
-    price: 2,
+    price: "$$$",
     latitude: 37.428420,
     longitude: -121.910210,
     categories: ['korean', 'dinner', 'meat', 'soup']
@@ -152,7 +152,7 @@ b5 = Business.create!(
     closetime: 21,
     phone_number: '(408) 255-2114',
     website: "www.somisomi.com",
-    price: 1,
+    price: "$",
     latitude: 37.324990,
     longitude: -122.010750,
     categories: ['dessert', 'sweet', 'soft serve', 'taiyaki', 'japanese']

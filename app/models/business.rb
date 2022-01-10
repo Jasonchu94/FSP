@@ -12,7 +12,7 @@
 #  closetime    :integer          not null
 #  phone_number :string           not null
 #  website      :string
-#  price        :integer          not null
+#  price        :string           not null
 #  latitude     :float            not null
 #  longitude    :float            not null
 #  created_at   :datetime         not null

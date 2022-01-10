@@ -1,3 +1,4 @@
+
 /*
  * This is a manifest file that'll be compiled into application.css, which will include all the files
  * listed below.
@@ -86,12 +87,31 @@
     width: 100%;
     display: flex;
     overflow: hidden;
-    .business-show-info{
-        > * {
-            display: flex;
-            flex-direction: column ;
-        }
+    position: relative;
+}
+.business-show-info{
+    display: flex;
+    flex-direction: column;
+    position: absolute;
+    font-family: $main-font;
+    margin-top: 22%;
+    margin-left: 5%;
+    
+    > h1{
+        color: white;
+        font-weight: bold;
+        font-size: 64px;
+        font-family: $main-font;
+        
+        
     }
+    >div{
+        color: white;
+        font-family: $main-font;
+        font-size: 22px;
+    }
+  
+    
 }
 .photo-slider{
     display: flex;
@@ -101,5 +121,27 @@
     }
 }
 
+.business-show-review-contaier{
+    display: flex;
+    width: 100%;
+    height: 100%;
+
+}
+
+.location-and-hours{
+    display: flex;
+}
+
+.hours-container{
+    display: flex;
+    flex-direction: column;
+    padding-left: 10%;
+  
+}
+.business-show-info-container{
+    position: absolute;
+    margin-left: 80%;
+    margin-bottom: 50%;
+}
 
 
