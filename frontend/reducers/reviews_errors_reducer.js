@@ -2,16 +2,14 @@ import {
     RECEIEVE_ERRORS_REVIEW, CLEAR_ERRORS_REVIEW
 } from '../actions/review_actions'
 
-const reviewErrorsReducer = (oldState={}, action) => {
+const reviewErrorsReducer = (oldState=[], action) => {
     Object.freeze(oldState);
 
     switch(action.type){
         case RECEIEVE_ERRORS_REVIEW:
             return action.errors
-        case CLEAR_ERRORS_REVIEW:
-            return [];
         default:
-            return oldState
+            return oldState;
     }
 };
 

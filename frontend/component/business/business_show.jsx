@@ -1,4 +1,5 @@
 import React from 'react';
+import ReviewListContainer from '../review/review_list_container';
 import ReviewList from '../review/review_list';
 import SearchBar from '../search_bar/search_bar'
 import NavBarDropdown from '../nav_bar/navbar_dropdown';
@@ -13,7 +14,7 @@ class BusinessShow extends React.Component{
         this.getRating = this.getRating.bind(this);
     }
     
-    componentWillMount(){
+    componentDidMount(){
         this.props.fetchBusiness(this.props.match.params.businessId);
         this.props.fetchReviews();
 
@@ -78,9 +79,9 @@ class BusinessShow extends React.Component{
     }
 
     render(){
-        const {business, currentUser, users} = this.props
-      
-        if (business){
+        const {business, currentUser} = this.props
+        // debugger 
+        if (!business){ return null}
             return(
                 <div className='business-index-container'>
                     <div className='business-nav-bar'>
@@ -128,7 +129,8 @@ class BusinessShow extends React.Component{
                             </div>
                         </div>
                             <p className='title-reviews'>Recommended Reviews</p>
-                            <ReviewList 
+                            {this.props.reviews.length === 0 ? <div>Be the first to review!</div>: 
+                            <ReviewListContainer
                             fetchReviews={this.props.fetchReviews}
                             business={business}
                             currentUser={currentUser}
@@ -136,7 +138,7 @@ class BusinessShow extends React.Component{
                             rating= {this.ratingPhoto(this.getRating(business))}
                             
                             
-                            />
+                            />}
                         
                         <div className='business-show-info-container'>
                                 <div className='right-business-container'>
@@ -158,7 +160,7 @@ class BusinessShow extends React.Component{
                 </div>
             )
 
-        } else{ return null}
+       
     }
 }
 

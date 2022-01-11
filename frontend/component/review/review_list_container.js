@@ -4,11 +4,16 @@ import { fetchReviews, editReview, deleteReview } from '../../actions/review_act
 import { withRouter } from 'react-router-dom';
 import { getBusiness } from '../../actions/business_actions';
 import ReviewList from './review_list'
-const mSTP = (state, ownProps) => ({
-    reviews: Object.values(state.entities.businesses[ownProps.match.params.businessId]),
-    businesses: state.entities.businesses,
-    currentUser: state.entities.users[state.session.id]
-})
+const mSTP = (state, ownProps) => {
+    // debugger
+    return({
+
+        reviews: state.entities.reviews,
+        businesses: state.entities.businesses,
+        currentUser: state.entities.users[state.session.id],
+        // business: state.entities.businesses[ownProps.match.params.businessId]
+    })
+}
 
 const mDTP = dispatch => ({
     fetchBusiness: businessId => dispatch(getBusiness(businessId)),

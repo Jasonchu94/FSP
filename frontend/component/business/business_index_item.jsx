@@ -4,15 +4,19 @@ class BusinessIndexItem extends React.Component{
 
     constructor(props){
         super(props)
+      
         this.handleClick = this.handleClick.bind(this)
     
     }
     
-    handleClick(){
+   
+    handleClick(e){
+        // e.preventDefault();
         this.props.history.push(`businesses/${this.props.business.id}`)
     }
 
-    ratingPhoto(rating){      
+    ratingPhoto(rating){     
+        // debugger 
         if(rating >= 0 && rating < 1.5) return <img src={window.rating1}></img>
         if (rating >= 1.5 && rating < 2) return <img src={window.rating15}></img>
         if (rating >= 2 && rating <2.5) return <img src={window.rating2}></img>
@@ -22,12 +26,13 @@ class BusinessIndexItem extends React.Component{
         if (rating >=4 && rating < 4.5) return <img src={window.rating4}></img>
         if (rating >=4.5 && rating < 5) return <img src={window.rating45}></img>
         if (rating === 5) return <img src={window.rating5}></img>   
-        if (rating === 0) return <img src={window.rating0}></img> 
+        return <img src={window.rating0}></img> 
     }
 
     getRating(business){
         this.totalReviews = 0;
         let totalRating=0;
+        // debugger
         business.reviews.map(review=>(
             totalRating += review.rating,
             this.totalReviews +=1
@@ -37,7 +42,8 @@ class BusinessIndexItem extends React.Component{
     }
    
     render(){
-        const {business, businesses, search} = this.props
+        const {business, businesses, search,reviews} = this.props
+        // debugger
         let randomPhoto = Math.floor(Math.random()*business.photoUrls.length)
         let randomReview = Math.floor(Math.random()*business.reviews.length)
        
@@ -63,7 +69,7 @@ class BusinessIndexItem extends React.Component{
                         </div>
                         <br></br>
                         <div className='random-review'>
-                             {business.reviews[randomReview].body}
+                             {business.reviews[randomReview] ? business.reviews[randomReview].body : "Be the first to review!"}
                         </div>
                        
                     </div>

@@ -7,31 +7,67 @@ class ReviewListItem extends React.Component{
 
         
     }
+    componentWillMount(){
+        this.props.fetchReviews();
+        // this.props.fetchBusiness(this.props.params.match.businessId)
+    }
 
     reviewDate(review){
         let date = review.created_at.split('T')[0].split('-')
 
         return (`${date[1]}/${date[2]}/${date[0]}`)
     }
+    deleteReview(){
+       
+        this.props.removeReview(this.props.review.id)
+            .then(()=> this.props.fetchBusiness((this.props.reviews[this.props.review.id]).business_id))
+    }
 
-
+    reviewOwner(){
+        const{currentUser, review} = this.props;
+        if (!currentUser) return null;
+      
+        if(currentUser.id === review.user_id){
+            return(
+                <div className='edit-elipses'> ...
+                    {/* <button onClick={this.props.updateReview()}>Edit</button> */}
+                    <button onClick={() => this.deleteReview()}>Delete</button>
+                </div>
+            )
+        }
+    }
+    ratingPhoto(){
+        const {review} = this.props;
+        if(review.rating ===1) return <img src={window.rating1}></img>      
+        if (review.rating ===2) return <img src={window.rating2}></img>      
+        if (review.rating ===3 ) return <img src={window.rating3}></img>      
+        if (review.rating ===4 ) return <img src={window.rating4}></img>   
+        if (review.rating ===5) return <img src={window.rating5}></img>   
+   
+    }
 
 
     render(){
-        const {review, rating} = this.props
+        const {review, rating, reviews, author} = this.props
         // debugger
-        return(
-            <div className='review-item'>
-                <div className='reviewer-profile'>
-                    <img src={window.profile}></img>
-                    {review.author.first_name.charAt(0).toUpperCase()+review.author.first_name.slice(1)}  {review.author.last_name.charAt(0).toUpperCase()}.
+        if (!review){ return null}
+            return(
+                <div className='review-item'>
+                    <div>{this.reviewOwner()}</div>
+                    <div className='reviewer-profile'>
+                        <img src={window.profile}></img>
+                        {review.author.first_name.charAt(0).toUpperCase()+review.author.first_name.slice(1)}  {review.author.last_name.charAt(0).toUpperCase()}.
+                    </div>
+                    <div>{this.ratingPhoto()}&nbsp;{this.reviewDate(review)}</div>
+                    <p>
+                        {review.body}
+                    </p>
                 </div>
-                <div>{rating}&nbsp;{this.reviewDate(review)}</div>
-                <p>
-                    {review.body}
-                </p>
-            </div>
-        )
+            )
+
+        
+      
+        
     }
 }
 

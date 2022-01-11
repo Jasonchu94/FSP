@@ -17,8 +17,8 @@
 #
 
 class Review < ApplicationRecord
-    #validates :rating, inclusion: {in: (1..5)}
-    #validates :body, presence: true
+    validates :rating, inclusion: {in: (1..5), message: "Please select a Rating to give"}
+    validates :body, presence: {message: "Please put some text for other Yeppers to read!"}
 
     belongs_to :business,
     foreign_key: :business_id

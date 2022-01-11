@@ -10,10 +10,20 @@ class ReviewList extends React.Component{
         
     }
 
+    componentDidMount(){
+        this.props.fetchReviews();
+    }
  
     render(){
-        const {business, currentUser, reviews, rating} = this.props
-    
+        const {business, currentUser, reviews, rating, fetchReviews,sessionId} = this.props
+        // debugger
+        if (Object.keys(reviews).length===0 ){
+            return(
+                <div>Be the first to review</div>
+            )
+        }else if( business.reviews[0] === undefined) return null;
+        if(business.reviews[0].author){
+
             return(
                 <div>   
                     <div className='review-list-container'>
@@ -37,20 +47,29 @@ class ReviewList extends React.Component{
                     <br></br>   
                      
                             <div className='review-item-container'>
-                                {reviews.reverse().map(review=> (
-                                    <ReviewListItem
-                                        review={review}
-                                        rating={rating}
-                                        key={review.id}
-                                        removeReview={this.props.removeReview}
-                                        updateReview={this.props.updateReview}                                
-                                     
-                                    />
-                                ))}
+                                {business.reviews.reverse().map(review=> {
+                                    // debugger
+                                    return(
+                                        <ReviewListItem
+                                            review={review} 
+                                            reviews={reviews}                                   
+                                            rating={rating}
+                                            key={review.id}
+                                            removeReview={this.props.removeReview}
+                                            updateReview={this.props.updateReview}  
+                                            fetchBusiness ={this.props.fetchBusiness}                              
+                                            fetchReviews ={fetchReviews}
+                                            // author={review.author}
+                                            currentUser = {currentUser}
+                                            sessionId={sessionId}
+                                        />                                        
+                                    )
+                                })}
                             </div>
                         
                 </div>
             )
+        } else{ return null}
         }
       
     }

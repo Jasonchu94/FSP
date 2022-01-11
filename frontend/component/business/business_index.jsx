@@ -11,10 +11,11 @@ class BusinessIndex extends React.Component{
 
     componentDidMount(){
       this.props.fetchBusinesses();
+      this.props.fetchReviews();
     }
     render(){
 
-        const {businesses} = this.props
+        const {businesses, reviews} = this.props
     
         return(
             <div className='business-index-container'>               
@@ -35,7 +36,9 @@ class BusinessIndex extends React.Component{
                                 <BusinessIndexItem
                                 business = {business}
                                 key = {business.id}
-                                businesses = {businesses}                                
+                                businesses = {businesses} 
+                                reviews = {reviews}
+                                fetchReviews ={this.props.fetchReviews}                               
                                 />                            
                                 ))
                             }                           

@@ -5,9 +5,9 @@ import { fetchReviews } from "../../actions/review_actions";
 import BusinessShow from "./business_show";
 
 const mSTP = (state, ownProps) => {
-    
+    // debugger
     return({
-
+        reviews: Object.values(state.entities.reviews),
         business: state.entities.businesses[ownProps.match.params.businessId],
         currentUser: state.entities.users[state.session.id],
         users: state.entities.users
