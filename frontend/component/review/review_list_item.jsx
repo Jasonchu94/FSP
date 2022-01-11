@@ -19,12 +19,12 @@ class ReviewListItem extends React.Component{
 
     render(){
         const {review, rating} = this.props
-    
+        // debugger
         return(
             <div className='review-item'>
                 <div className='reviewer-profile'>
                     <img src={window.profile}></img>
-                    {/* {review.author.first_name} */}
+                    {review.author.first_name.charAt(0).toUpperCase()+review.author.first_name.slice(1)}  {review.author.last_name.charAt(0).toUpperCase()}.
                 </div>
                 <div>{rating}&nbsp;{this.reviewDate(review)}</div>
                 <p>
