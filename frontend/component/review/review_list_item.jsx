@@ -4,6 +4,8 @@ class ReviewListItem extends React.Component{
 
     constructor(props){
         super(props)
+
+        
     }
 
     reviewDate(review){
@@ -17,12 +19,12 @@ class ReviewListItem extends React.Component{
 
     render(){
         const {review, rating} = this.props
-        // debugger
+    
         return(
             <div className='review-item'>
                 <div className='reviewer-profile'>
                     <img src={window.profile}></img>
-                    Author name here
+                    {/* {review.author.first_name} */}
                 </div>
                 <div>{rating}&nbsp;{this.reviewDate(review)}</div>
                 <p>

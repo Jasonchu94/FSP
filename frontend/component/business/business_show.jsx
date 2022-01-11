@@ -10,14 +10,15 @@ class BusinessShow extends React.Component{
 
         this.businessWebsite = this.businessWebsite.bind(this);
         this.writeReview = this.writeReview.bind(this);
-        
+        this.getRating = this.getRating.bind(this);
     }
-
     
     componentWillMount(){
-        this.props.fetchBusiness(this.props.match.params.businessId)
+        this.props.fetchBusiness(this.props.match.params.businessId);
         this.props.fetchReviews();
+
     }
+
 
     ratingPhoto(rating){      
         if(rating >= 0 && rating < 1.5) return <img src={window.rating1}></img>
@@ -31,7 +32,9 @@ class BusinessShow extends React.Component{
         if (rating === 5) return <img src={window.rating5}></img>   
         if (rating === 0) return <img src={window.rating0}></img> 
     }
+
     getRating(business){
+        // debugger
         this.totalReviews = 0;
         let totalRating=0;
         business.reviews.map(review=>(
@@ -131,8 +134,8 @@ class BusinessShow extends React.Component{
                             currentUser={currentUser}
                             reviews = {business.reviews}
                             rating= {this.ratingPhoto(this.getRating(business))}
-                            fetchAllUsers={this.props.fetchAllUsers}
-                            users={users}
+                            
+                            
                             />
                         
                         <div className='business-show-info-container'>

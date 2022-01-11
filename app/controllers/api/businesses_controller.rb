@@ -7,7 +7,8 @@ class Api::BusinessesController < ApplicationController
 
     def show
         @business = Business.find_by(id: params[:id])
-        # add reviews
+    
+  
         render :show
     end
 
@@ -15,6 +16,7 @@ class Api::BusinessesController < ApplicationController
 
     def business_params
         params.require(:business).permit(
+            :id,
             :name, 
             :address, 
             :state, 

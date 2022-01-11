@@ -38,14 +38,14 @@ class BusinessIndexItem extends React.Component{
    
     render(){
         const {business, businesses, search} = this.props
-        let n = Math.floor(Math.random()*business.photoUrls.length)
-        let m = Math.floor(Math.random()*business.reviews.length)
+        let randomPhoto = Math.floor(Math.random()*business.photoUrls.length)
+        let randomReview = Math.floor(Math.random()*business.reviews.length)
        
         return(
             <div className='business-index-item-container' onClick={this.handleClick}>
                 <div className='business-index-item'>
                     <div className='business-image'>
-                        <img className='index-image'src={business.photoUrls[n]}></img>
+                        <img className='index-image'src={business.photoUrls[randomPhoto]}></img>
                     </div>
                     <div className='business-info-container'>
                         <div className='business-name'>
@@ -63,7 +63,7 @@ class BusinessIndexItem extends React.Component{
                         </div>
                         <br></br>
                         <div className='random-review'>
-                             {business.reviews[m].body}
+                             {business.reviews[randomReview].body}
                         </div>
                        
                     </div>

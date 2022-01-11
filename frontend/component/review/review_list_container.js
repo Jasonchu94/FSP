@@ -5,7 +5,7 @@ import { withRouter } from 'react-router-dom';
 import { getBusiness } from '../../actions/business_actions';
 import ReviewList from './review_list'
 const mSTP = (state, ownProps) => ({
-    reviews: state.entities.businesses[ownProps.match.params.businessId].reviews,
+    reviews: Object.values(state.entities.businesses[ownProps.match.params.businessId]),
     businesses: state.entities.businesses,
     currentUser: state.entities.users[state.session.id]
 })

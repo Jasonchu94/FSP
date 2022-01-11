@@ -8,11 +8,12 @@ class Api::ReviewsController < ApplicationController
     end
 
     def show
+      
         @review = Review.find(params[:id])
-        @review.author = User.find_by(id: @review.user_id)
+     
         render :show
     end
-
+    
     def create
         @review = Review.new(review_params)
         @review.user_id = current_user.id

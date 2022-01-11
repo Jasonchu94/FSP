@@ -22,7 +22,7 @@ const App =() =>(
             <Route exact path = '/businesses' component={BusinessIndexContainer}/>
             <Route exact path ='/businesses/:businessId' component={BusinessShowContainer}/>  
             <Route path='/search' component={SearchResultContainer}/>
-            <Route exact path='/businesses/:businessId/review/new' component={ReviewFormContainer}/>
+            <ProtectedRoute exact path='/businesses/:businessId/review/new' component={ReviewFormContainer}/>
         </Switch>   
         {/* <About/> */}
      
