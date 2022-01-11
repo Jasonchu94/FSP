@@ -10,7 +10,6 @@ class SearchResult extends React.Component{
         super(props)
        
         this.filterSearch = this.filterSearch.bind(this);
-        this.clearSearchResults = this.clearSearchResults.bind(this);
         this.searchResults = [];
     }
 
@@ -18,14 +17,8 @@ class SearchResult extends React.Component{
         this.props.fetchReviews();
         this.props.fetchBusinesses();
     }
-    componentWillUnmount(){
-        this.clearSearchResults();
-    }
 
-    clearSearchResults(){
-        this.searchResults = [];
-    }
-   
+ 
     
     filterSearch(){
         const {location, businesses} = this.props

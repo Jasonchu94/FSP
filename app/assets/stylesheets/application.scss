@@ -26,21 +26,52 @@
 @import 'components/business_show.scss';
 @import 'components/business.scss';
 
-.write-review-container{
+
+
+
+.title-reviews{
+    font-size: 20px;
+    font-family: $main-font;
+    font-weight: bold;
+    padding-bottom: 1%;
+    border-bottom: 1px solid lightgray;
     width: 50%;
-    height: 100px;
-    border: 1px solid black;
-    > *{
-        margin-top: 5%;
-        margin-left: 5%;
-        color: white;
-        border: 1px solid red;
-        background-color: red;
-        font-family: $main-font;
-        font-weight: bold;
-    }
 }
 
+.review-list-container{
+    border: 1px solid lightgray;
+    border-radius: 3px;
+    width: 50%;
+    height: 30%;
+    
+}
 
+.review-form{
+    display: flex;
+    justify-content: space-evenly;
+    padding-top: 6%;
+    // height: 200px;
+}
+.review-stars-link{
+    display: flex;
+    justify-content: space-evenly;
+    flex-direction: column;
+}
+.review-profile{
+    display: flex;
+    justify-content: space-evenly;
+    margin-right: 5%;
+}
 
+.review-item-container{
+    display: flex;
+    flex-direction: column;
+    justify-content: space-evenly;
+}
 
+.review-item{
+    display: flex;
+    flex-direction: column;
+    justify-content: space-evenly;
+    height: 200px;
+}

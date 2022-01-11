@@ -2,17 +2,21 @@ import React from 'react';
 import ReviewList from '../review/review_list';
 import SearchBar from '../search_bar/search_bar'
 import NavBarDropdown from '../nav_bar/navbar_dropdown';
-import { Link } from 'react-router-dom';
+import { Link, withRouter } from 'react-router-dom';
 class BusinessShow extends React.Component{
 
     constructor(props){
         super(props)
 
+        this.businessWebsite = this.businessWebsite.bind(this);
+        this.writeReview = this.writeReview.bind(this);
+        
     }
 
     
     componentWillMount(){
         this.props.fetchBusiness(this.props.match.params.businessId)
+        this.props.fetchReviews();
     }
 
     ratingPhoto(rating){      
@@ -42,7 +46,7 @@ class BusinessShow extends React.Component{
         const {business} = this.props;
 
         return(`
-        Open ${business.opentime < 12 ? business.opentime : business.opentime-12}:00
+         ${business.opentime < 12 ? business.opentime : business.opentime-12}:00
             ${business.opentime > 12 ? "PM" : "AM"} -
             ${business.closetime > 12 ? business.closetime -12 : business.closetime}:00 
             PM
@@ -50,8 +54,28 @@ class BusinessShow extends React.Component{
         ` )
     }
 
+    businessWebsite(business){
+        if(business.website){
+            return(
+                <div className='business-website'>
+                    <a href={business.website}></a>{business.website}
+                    <img src={window.website}></img>
+                </div>
+            )
+        } else{ return null
+        }
+    }
+
+    writeReview(){
+        if(!this.props.currentUser){
+            this.props.history.push('/login')
+        }else{
+            this.props.history.push(`/businesses/${this.props.business.id}/reviews/new`)
+        }
+    }
+
     render(){
-        const {business} = this.props
+        const {business, currentUser, users} = this.props
       
         if (business){
             return(
@@ -64,7 +88,7 @@ class BusinessShow extends React.Component{
                     <div className='business-show-photo-slider-container'>
                         <div className='photo-slider'>
                             {business.photoUrls.map(photo =>(
-                                    <img src={photo}></img>
+                                    <img src={photo} key={Math.random()}></img>
                             ))}
                         </div>
                         <div className='business-show-info'>
@@ -79,30 +103,53 @@ class BusinessShow extends React.Component{
                     </div>
                     <div className='business-show-review-container'>
                         <div className='write-review-container'>
-                            <button className='review-button'>Write a Review</button>                            
+                            <button className='review-button' onClick={this.writeReview}> ☆ Write a Review</button>                            
                         </div>                        
                         <p className='location-title'>Location & Hours</p>
                         <div className='location-and-hours'>                                                   
                             <div className='map'><img src={window.daeho}></img></div>
                             <div className='hours-container'>
                                     <p>Mon {this.businessTime()}</p>
+                                    <br></br>
                                     <p>Tue {this.businessTime()}</p>
+                                    <br></br>
                                     <p>Wed {this.businessTime()}</p>
+                                    <br></br>
                                     <p>Thu {this.businessTime()}</p>
+                                    <br></br>
                                     <p>Fri {this.businessTime()}</p>
+                                    <br></br>
                                     <p>Sat {this.businessTime()}</p>
+                                    <br></br>
                                     <p>Sun {this.businessTime()}</p>
                             </div>
                         </div>
-                            <ReviewList fetchReviews={this.props.fetchReviews}/>
+                            <p className='title-reviews'>Recommended Reviews</p>
+                            <ReviewList 
+                            fetchReviews={this.props.fetchReviews}
+                            business={business}
+                            currentUser={currentUser}
+                            reviews = {business.reviews}
+                            rating= {this.ratingPhoto(this.getRating(business))}
+                            fetchAllUsers={this.props.fetchAllUsers}
+                            users={users}
+                            />
                         
                         <div className='business-show-info-container'>
-                                {business.website}
-                                <hr></hr>
-                                {business.phone_number}
-                                <br></br>
-                                <span>Get Directions</span>
-                                {business.address}
+                                <div className='right-business-container'>
+                                    {this.businessWebsite(business)}                                      
+                                    <div className='business-phone-number'>
+                                        <div>{business.phone_number} </div>
+                                        <img src={window.phone}></img>
+                                    </div>
+                                    <br></br>
+                                    <div className='business-directions'>
+                                        <div className='directions-title'>Get Directions</div>
+                                    </div>
+                                    <br></br>
+                                    <div className='business-address'>{business.address}, {business.city}, {business.zipcode} <img src={window.yepdirections}></img></div>
+
+                                </div>
                         </div>
                     </div>
                 </div>
@@ -112,4 +159,4 @@ class BusinessShow extends React.Component{
     }
 }
 
-export default BusinessShow;
+export default withRouter(BusinessShow);

@@ -8,6 +8,7 @@ import SplashContainer from './splash/splash_container';
 import BusinessIndexContainer from './business/business_index_container'
 import BusinessShowContainer from './business/business_show_container'
 import SearchResultContainer from './search_result/search_result_container'
+import ReviewFormContainer from './review/review_form_container'
 import About from './about/about';
 
 
@@ -21,6 +22,7 @@ const App =() =>(
             <Route exact path = '/businesses' component={BusinessIndexContainer}/>
             <Route exact path ='/businesses/:businessId' component={BusinessShowContainer}/>  
             <Route path='/search' component={SearchResultContainer}/>
+            <Route exact path='/businesses/:businessId/review/new' component={ReviewFormContainer}/>
         </Switch>   
         {/* <About/> */}
      
