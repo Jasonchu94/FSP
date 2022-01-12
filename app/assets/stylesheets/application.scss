@@ -111,7 +111,28 @@ textarea{
     
 }
 
-//about
+//splash
+.splash-top-container{
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+}
 
+.splash-businesses{
+    display: flex;
+    flex-direction: column;
+}
+
+.splash-business-title{
+    font-size: 30px;
+    font-family: $main-font;
+    font-weight: bold;
+    display: flex;
+    justify-content: center;
+    position: absolute;
+    left: 40%;
+    bottom: 50%;
+
+}
 
 

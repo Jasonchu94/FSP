@@ -1,7 +1,7 @@
 import { connect } from "react-redux";
 import { getBusiness, getBusinesses } from "../../actions/business_actions";
 import { fetchReviews } from "../../actions/review_actions";
-
+import { withRouter } from "react-router-dom";
 import BusinessShow from "./business_show";
 
 const mSTP = (state, ownProps) => {
