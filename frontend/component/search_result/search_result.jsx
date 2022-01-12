@@ -3,7 +3,7 @@ import { Link } from 'react-router-dom';
 import SearchBar from '../search_bar/search_bar'
 import BusinessIndexItem from '../business/business_index_item'
 import NavBarDropdown from '../nav_bar/navbar_dropdown';
-
+import Map from '../map/map';
 class SearchResult extends React.Component{
 
     constructor(props){
@@ -77,7 +77,7 @@ class SearchResult extends React.Component{
 
                         </div>
                         <div className='business-map'>
-                         EL MAP HERE
+                         <Map businesses={businesses}/>
                         </div>
                        
                     </div>  

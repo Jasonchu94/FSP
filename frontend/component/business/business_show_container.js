@@ -3,9 +3,10 @@ import { getBusiness, getBusinesses } from "../../actions/business_actions";
 import { fetchReviews } from "../../actions/review_actions";
 import { withRouter } from "react-router-dom";
 import BusinessShow from "./business_show";
+import {logout} from '../../actions/session_actions'
 
 const mSTP = (state, ownProps) => {
-    // debugger
+   
     return({
         reviews: Object.values(state.entities.reviews),
         business: state.entities.businesses[ownProps.match.params.businessId],
@@ -19,7 +20,8 @@ const mSTP = (state, ownProps) => {
 const mDTP = dispatch => {
     return({
         fetchBusiness: businessId => dispatch(getBusiness(businessId)),
-        fetchReviews: () => dispatch(fetchReviews()),
+        fetchReviews: () => dispatch(fetchReviews()),  
+        logout: () => dispatch(logout())
     })
 };
 

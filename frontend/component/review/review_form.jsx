@@ -29,7 +29,7 @@ class ReviewForm extends React.Component{
 
     handleSubmit(e){
         e.preventDefault();
-        // debugger
+       
         this.props.createReview(Object.assign({}, this.state))
             .then(()=> this.props.history.push(`/businesses/${this.state.business_id}`))
     }
@@ -40,7 +40,7 @@ class ReviewForm extends React.Component{
 
     showErrors(){
         if (!this.props.errors) return null;
-        // debugger
+       
         return(
             <ul className='review-errors'>
                 {Object.values(this.props.errors).map((error,i) =>(
@@ -52,7 +52,7 @@ class ReviewForm extends React.Component{
         )
     }
     render(){
-        // debugger
+      
         const {business} = this.props;
         return(
             <div>

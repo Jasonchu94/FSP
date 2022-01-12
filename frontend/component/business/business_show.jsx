@@ -36,7 +36,7 @@ class BusinessShow extends React.Component{
     }
 
     getRating(business){
-        // debugger
+       
         this.totalReviews = 0;
         let totalRating=0;
         business.reviews.map(review=>(
@@ -63,8 +63,8 @@ class BusinessShow extends React.Component{
         if(business.website){
             return(
                 <div className='business-website'>
-                    <a href={business.website}></a>{business.website}
-                    <img src={window.website}></img>
+                    <a className='business-website-link' href={business.website}>{business.website}</a>
+                    <img className='website-photo' src={window.website}></img>
                 </div>
             )
         } else{ return null
@@ -81,7 +81,7 @@ class BusinessShow extends React.Component{
 
     render(){
         const {business, currentUser} = this.props
-        // debugger 
+     
         if (!business){ return null}
             return(
                 <div className='business-index-container'>
@@ -129,7 +129,7 @@ class BusinessShow extends React.Component{
                                     <p>Sun {this.businessTime()}</p>
                             </div>
                         </div>
-                            <p className='title-reviews'>Recommended Reviews</p>
+                            <div className='title-reviews'>Recommended Reviews</div>
                             {this.props.reviews.length === 0 ? <div>Be the first to review!</div>: 
                             <ReviewListContainer
                             fetchReviews={this.props.fetchReviews}
@@ -143,16 +143,14 @@ class BusinessShow extends React.Component{
                         
                         <div className='business-show-info-container'>
                                 <div className='right-business-container'>
-                                    {this.businessWebsite(business)}                                      
+                                <p className='business-website'>{this.businessWebsite(business)} </p>                                     
                                     <div className='business-phone-number'>
                                         <div>{business.phone_number} </div>
-                                        <img src={window.phone}></img>
+                                        <img className='business-phone' src={window.phone}></img>
                                     </div>
-                                    <br></br>
-                                    <div className='business-directions'>
-                                        <div className='directions-title'>Get Directions</div>
-                                    </div>
-                                    <br></br>
+                                    <br></br>                                
+                                   
+                                    <div className='directions-title'>Get Directions</div>
                                     <div className='business-address'>{business.address}, {business.city}, {business.zipcode} <img src={window.yepdirections}></img></div>
 
                                 </div>

@@ -43,7 +43,7 @@ class BusinessIndexItem extends React.Component{
    
     render(){
         const {business, businesses, search,reviews} = this.props
-        // debugger
+     
         let randomPhoto = Math.floor(Math.random()*business.photoUrls.length)
         let randomReview = Math.floor(Math.random()*business.reviews.length)
        

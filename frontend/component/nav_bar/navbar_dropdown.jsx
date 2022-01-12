@@ -5,8 +5,12 @@ import { Link } from 'react-router-dom';
 class NavBarDropdown extends React.Component{
     constructor(props) {
         super(props); 
+        this.state = {
+            dropdown: false
+        }
         this.handleClick = this.handleClick.bind(this);
         this.handleBlur = this.handleBlur.bind(this);
+        this.toggledrop = this.toggledrop.bind(this);
     }
 
     handleClick(){
@@ -14,6 +18,11 @@ class NavBarDropdown extends React.Component{
     }
     handleBlur(){
         document.getElementById('dropdown-container').className='clear';
+    }
+    toggledrop(){
+        if (this.state.dropdown === false) {
+        return this.setState({dropdown: true})
+    }else {return this.setState({dropdown:false})}
     }
 
     render (){
@@ -27,10 +36,10 @@ class NavBarDropdown extends React.Component{
         if (currentUser){
                 return(
                         <div className='dropdown-arrow'>
-                            <img className='profile-pic' src={window.profile}></img>
-                            <button className='dropdown-marker' onClick={this.handleClick} >{image}  
+                            {this.props.icon ? null :<img className='profile-pic' src={window.profile}></img>}
+                            <button className='dropdown-marker' onClick={this.toggledrop} >{image}  
                             </button>
-                                <div id='dropdown-container' className='dropdown-container' className='clear'>
+                                <div id='dropdown-container' className='dropdown-container' onMouseOut={this.toggledrop}className={this.state.dropdown ? "show" : 'clear'} >
                                     <div className='dropdown-box' onBlur={this.handleBlur}>
                                         <img className='profile-pic' src={window.profile}></img>
                                         <li className='profile-name'>

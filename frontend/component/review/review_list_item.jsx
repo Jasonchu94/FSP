@@ -25,7 +25,7 @@ class ReviewListItem extends React.Component{
     }
 
     editReview(){
-        // debugger
+        
         this.props.history.push(`${this.props.business.id}/reviews/${this.props.review.id}/edit`)
     }
 
@@ -55,7 +55,7 @@ class ReviewListItem extends React.Component{
 
     render(){
         const {review, rating, reviews, author} = this.props
-        // debugger
+        
         if (!review){ return null}
             return(
                 <div className='review-item'>
@@ -65,7 +65,7 @@ class ReviewListItem extends React.Component{
                         {review.author.first_name.charAt(0).toUpperCase()+review.author.first_name.slice(1)}  {review.author.last_name.charAt(0).toUpperCase()}.
                     </div>
                     <div>{this.ratingPhoto()}&nbsp;{this.reviewDate(review)}</div>
-                    <p>
+                    <p className='review-body'>
                         {review.body}
                     </p>
                 </div>

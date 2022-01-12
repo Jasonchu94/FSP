@@ -8,6 +8,7 @@ class SanJoseItem extends React.Component{
         this.handleClick = this.handleClick.bind(this)
     }
 
+
     handleClick(e){
         this.props.history.push(`businesses/${this.props.business.id}`)
     }
@@ -40,27 +41,30 @@ class SanJoseItem extends React.Component{
 
     render(){
         const{business, reviews} = this.props;
-        let randomPhoto = Math.floor(Math.random()*business.photoUrls.length)
         // debugger
-        return(
-            <div className='san-jose-item-container'>
-                <div className='sj-item' onClick={this.handleClick}> 
-                <img className='index-image'src={business.photoUrls[randomPhoto]}></img>
-                    <div className='san-jose-name'>{business.name}</div>
-                    <div className='san-jose-ratings'> 
-                        {this.ratingPhoto(this.getRating(business))}&nbsp;
-                        {this.totalReviews}
-                    </div> 
-                    <div className='san-jose-categories'>
-                        {business.categories[0].charAt(0).toUpperCase() + business.categories[0].slice(1) + "," + 
-                        business.categories[1].charAt(0).toUpperCase() + business.categories[1].slice(1)}
+        if (business === undefined) {return null} else{
+            let randomPhoto = Math.floor(Math.random()*business.photoUrls.length)
+
+            return(
+                <div className='san-jose-item-container'>
+                    <div className='sj-item' onClick={this.handleClick}> 
+                    <img className='index-image'src={business.photoUrls[randomPhoto]}></img>
+                        <div className='san-jose-name'>{business.name}</div>
+                        <div className='san-jose-ratings'> 
+                            {this.ratingPhoto(this.getRating(business))}&nbsp;
+                            {this.totalReviews}
+                        </div> 
+                        <div className='san-jose-categories'>
+                            {business.categories[0].charAt(0).toUpperCase() + business.categories[0].slice(1) + "," + 
+                            business.categories[1].charAt(0).toUpperCase() + business.categories[1].slice(1)}
+                        </div>
+                        <div className='san-jose-address'>
+                            {business.city},{business.state}
+                        </div>   
                     </div>
-                    <div className='san-jose-address'>
-                        {business.city},{business.state}
-                    </div>   
                 </div>
-            </div>
-        )
+            )
+        }
     }
     
 }

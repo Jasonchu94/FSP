@@ -3,6 +3,7 @@ import { Link } from 'react-router-dom';
 import SearchBar from '../search_bar/search_bar'
 import NavBarDropdown from '../nav_bar/navbar_dropdown'
 import BusinessIndexItem from './business_index_item'
+import Map from '../map/map';
 class BusinessIndex extends React.Component{
 
     constructor(props){
@@ -15,9 +16,10 @@ class BusinessIndex extends React.Component{
       this.props.fetchReviews();
     }
     render(){
-
-        const {businesses, reviews} = this.props
-    
+        // debugger
+        const {businesses, reviews} = this.props;
+        // debugger
+        if(businesses.length === 0) return null;
         return(
             <div className='business-index-container'>               
                     <div className='business-nav-bar'>
@@ -45,7 +47,7 @@ class BusinessIndex extends React.Component{
                             }                           
                         </div>
                         <div className='business-map'>
-                            EL MAP HERE
+                            <Map businesses={businesses}/>
                         </div>
 
                     </div>

@@ -38,7 +38,7 @@ class EditReviewForm extends React.Component{
     }
     showErrors(){
         if (!this.props.errors) return null;
-        // debugger
+        
         return(
             <ul className='review-errors'>
                 {Object.values(this.props.errors).map((error,i) =>(
@@ -65,8 +65,8 @@ class EditReviewForm extends React.Component{
                     </div>
                 </div>
                 <div className='review-form-container'>
-                    <div className='business-title'>
-                        <Link to={`/businesses/${business.id}`} className='review-business-title'></Link>{business.name}
+                    <div className='review-business-title'>
+                        <Link to={`/businesses/${business.id}`} className='review-business-title'>{business.name}</Link>
                     </div>
                     <div className='form-container-review'>
                         <form onSubmit={this.handleSubmit}>

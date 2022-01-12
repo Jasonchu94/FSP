@@ -16,7 +16,7 @@ class ReviewList extends React.Component{
  
     render(){
         const {business, currentUser, reviews, rating, fetchReviews,sessionId} = this.props
-        // debugger
+        
         if (Object.keys(reviews).length===0 ){
             return(
                 <div>Be the first to review</div>
@@ -48,7 +48,7 @@ class ReviewList extends React.Component{
                      
                             <div className='review-item-container'>
                                 {business.reviews.reverse().map(review=> {
-                                    // debugger
+                                    
                                     return(
                                         <ReviewListItem
                                             review={review} 

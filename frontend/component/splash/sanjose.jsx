@@ -4,7 +4,7 @@ import SanJoseItem from './sanjose_item'
 
 class SanJose extends React.Component{
 
-    componentDidMount(){
+    componentWillMount(){
         this.props.fetchBusinesses();
         this.props.fetchReviews();
     }
@@ -29,23 +29,25 @@ class SanJose extends React.Component{
             randomBusiness.push(this.shuffle(businesses).shift())
             randomBusiness.push(this.shuffle(businesses).shift())
 
-        }
-        // debugger
-        return(
-            <div className='yep-san-jose-container'>
+            // debugger
+            return(
+                <div className='yep-san-jose-container'>
                 <div className='san-jose-container'>
                     <h1 className='splash-business-title'>Yep San Jose</h1>
-                    {randomBusiness.map(business =>(
+                    {randomBusiness.length >= 1 ? randomBusiness.map(business =>(
                         <SanJoseItem
-                            business={business}
-                            key={business.id}
-                            reviews={reviews}
+                        business={business}
+                        key={business.id}
+                        reviews={reviews}
+                        fetchBusinesses={this.props.fetchBusinesses}
+                        
                         />
-                    ))}
+                        )) : null}
                 </div>              
                 <Link className='san-jose-link' to='/businesses'>See more businesses in San Jose</Link>               
             </div>
         )
+    }
     }
 
 }

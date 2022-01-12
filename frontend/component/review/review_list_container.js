@@ -5,7 +5,7 @@ import { withRouter } from 'react-router-dom';
 import { getBusiness } from '../../actions/business_actions';
 import ReviewList from './review_list'
 const mSTP = (state, ownProps) => {
-    // debugger
+    
     return({
 
         reviews: state.entities.reviews,
