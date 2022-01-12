@@ -1,4 +1,5 @@
 import React from 'react';
+import { withRouter } from 'react-router-dom';
 
 class ReviewListItem extends React.Component{
 
@@ -9,7 +10,7 @@ class ReviewListItem extends React.Component{
     }
     componentWillMount(){
         this.props.fetchReviews();
-        // this.props.fetchBusiness(this.props.params.match.businessId)
+        this.props.fetchBusiness(this.props.match.params.businessId)
     }
 
     reviewDate(review){
@@ -23,6 +24,11 @@ class ReviewListItem extends React.Component{
             .then(()=> this.props.fetchBusiness((this.props.reviews[this.props.review.id]).business_id))
     }
 
+    editReview(){
+        // debugger
+        this.props.history.push(`${this.props.business.id}/reviews/${this.props.review.id}/edit`)
+    }
+
     reviewOwner(){
         const{currentUser, review} = this.props;
         if (!currentUser) return null;
@@ -30,7 +36,7 @@ class ReviewListItem extends React.Component{
         if(currentUser.id === review.user_id){
             return(
                 <div className='edit-elipses'> ...
-                    {/* <button onClick={this.props.updateReview()}>Edit</button> */}
+                    <button onClick={() =>this.editReview()}>Edit</button>
                     <button onClick={() => this.deleteReview()}>Delete</button>
                 </div>
             )
@@ -71,4 +77,4 @@ class ReviewListItem extends React.Component{
     }
 }
 
-export default ReviewListItem;
+export default withRouter(ReviewListItem);

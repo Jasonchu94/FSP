@@ -1,5 +1,6 @@
 import React from 'react';
 import { Link } from 'react-router-dom';
+import About from '../about/about';
 
 class SessionForm extends React.Component{
 
@@ -102,6 +103,9 @@ class SessionForm extends React.Component{
                                 <img className='login-pic' src={window.loginpic}/>
                         </div>
                     </div>
+                    <footer className='about-links'>
+                    <About/>
+                </footer>
 
                 </div>
             )
@@ -188,6 +192,9 @@ class SessionForm extends React.Component{
                             </div>
 
                         </div>
+                        <footer className='about-links'>
+                    <About/>
+                </footer>
                 </div>
 
             )

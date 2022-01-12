@@ -9,6 +9,7 @@ import BusinessIndexContainer from './business/business_index_container'
 import BusinessShowContainer from './business/business_show_container'
 import SearchResultContainer from './search_result/search_result_container'
 import ReviewFormContainer from './review/review_form_container'
+import EditReviewFormContainer from './review/edit_review_container'
 import About from './about/about';
 
 
@@ -23,6 +24,7 @@ const App =() =>(
             <Route exact path ='/businesses/:businessId' component={BusinessShowContainer}/>  
             <Route path='/search' component={SearchResultContainer}/>
             <ProtectedRoute exact path='/businesses/:businessId/reviews/new' component={ReviewFormContainer}/>
+            <ProtectedRoute exact path ='/businesses/:businessId/reviews/:reviewId/edit' component={EditReviewFormContainer}/>
         </Switch>   
         {/* <About/> */}
      

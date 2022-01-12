@@ -3,6 +3,7 @@ import { Link } from 'react-router-dom';
 import NavBarContainer from '../nav_bar/nav_bar_container'
 import SearchBar from '../search_bar/search_bar';
 import NavBarDropdown from '../nav_bar/navbar_dropdown';
+import About from '../about/about';
 class Splash extends React.Component{
     render(){
         return(
@@ -17,6 +18,9 @@ class Splash extends React.Component{
                 <div className='splash-search-bar-container'>
                     <SearchBar/>                    
                 </div>
+                <footer className='about-links'>
+                    <About/>
+                </footer>
           
 
             </div>

@@ -31,8 +31,9 @@
 .search-bar{
     display: flex;
     flex-wrap: wrap;
-    width: 100%;
-    margin-right: 10%;
+    width: 60%;
+    margin-right: 25%;
+    overflow: none;
 }
 
 .find-box{
@@ -61,6 +62,7 @@
     display: flex;
     align-items: center;
     font-size: 14pt;
+    width: 200px;
     // border-radius: 3px;
 
     .near-text{

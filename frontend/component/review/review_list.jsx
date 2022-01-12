@@ -59,7 +59,7 @@ class ReviewList extends React.Component{
                                             updateReview={this.props.updateReview}  
                                             fetchBusiness ={this.props.fetchBusiness}                              
                                             fetchReviews ={fetchReviews}
-                                            // author={review.author}
+                                            business={business}
                                             currentUser = {currentUser}
                                             sessionId={sessionId}
                                         />                                        
