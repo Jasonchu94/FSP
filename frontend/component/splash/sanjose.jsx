@@ -27,7 +27,7 @@ class SanJose extends React.Component{
                     {randomBusiness.map(business =>(
                         <SanJoseItem
                             business={business}
-                            key={business.id}
+                            // key={business.id}
                             reviews={reviews}
                         />
                     ))}

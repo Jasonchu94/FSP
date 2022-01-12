@@ -158,6 +158,86 @@ b5 = Business.create!(
     categories: ['dessert', 'sweet', 'soft serve', 'taiyaki', 'japanese']
 
 )
+b6 = Business.create!(
+    name: '99 Chicken',
+    address: '2781 El Camino Real',
+    state: 'CA',
+    city: 'Santa Clara',
+    zipcode: 95051,
+    opentime: 12,
+    closetime: 21,
+    phone_number: '(408) 244-5599',
+    website: "www.99chicken4u.com",
+    price: "$$",
+    latitude: 37.352970,
+    longitude:-121.977060,
+    categories: ['Korean', 'Chicken Wings', 'Salad']
+
+)
+b7 = Business.create!(
+    name: 'Philz Coffee',
+    address: '118 Paseo De San Antonio Walk',
+    state: 'CA',
+    city: 'San Jose',
+    zipcode: 95112,
+    opentime: 6,
+    closetime: 18,
+    phone_number: '(408) 971-4212',
+    website: "www.philzcoffee.com",
+    price: "$",
+    latitude: 37.331650,
+    longitude: -121.891060,
+    categories: ['Coffee', 'Tea']
+
+)
+b8 = Business.create!(
+    name: 'Ramen Nagi',
+    address: '2855 Stevens Creek Blvd ',
+    state: 'CA',
+    city: 'Santa Clara',
+    zipcode: 95014,
+    opentime: 11,
+    closetime: 21,
+    phone_number: '(408) 123-4567',
+    website: "www.ramennagiusa.com",
+    price: "$$",
+    latitude: 37.325520,
+    longitude: -121.945648,
+    categories: ['Japanese', 'Ramen']
+
+)
+b9 = Business.create!(
+    name: 'Pho 90 Degree',
+    address: '999 Story Rd Ste 9090',
+    state: 'CA',
+    city: 'San Jose',
+    zipcode: 95122,
+    opentime: 10,
+    closetime: 23,
+    phone_number: '(408) 993-9090',
+    website: "www.pho90degree.com",
+    price: "$$",
+    latitude: 37.331450,
+    longitude: 121.856500,
+    categories: ['Vietnamse', 'Noodles', 'Rice']
+
+)
+b10 = Business.create!(
+    name: '10 Butchers Korean BBQ',
+    address: '595 E El Camino Real',
+    state: 'CA',
+    city: 'Sunnyvale',
+    zipcode: 94087,
+    opentime: 11,
+    closetime: 21,
+    phone_number: '(669) 454-3263',
+    website: "www.10butchers.net",
+    price: "$$$",
+    latitude: 37.324990,
+    longitude: -122.010750,
+    categories: ['Korean','Barbeque', 'Wine Bars']
+
+)
 
 mcdonalds1=URI.open('https://yep-seed.s3.amazonaws.com/Mcdonalds1.jpg')
 mcdonalds2=URI.open('https://yep-seed.s3.amazonaws.com/Mcdonalds2.jpg')
@@ -211,6 +291,60 @@ b5.photos.attach(io: somi2, filename: 'Somi2.jpg')
 b5.photos.attach(io: somi3, filename: 'Somi3.jpg')
 b5.photos.attach(io: somi4, filename: 'Somi4.jpg')
 b5.photos.attach(io: somi5, filename: 'Somi5.jpg')
+
+chicken1=URI.open('https://yep-seed.s3.amazonaws.com/99Chicken1.jpg')
+chicken2=URI.open('https://yep-seed.s3.amazonaws.com/99Chicken2.jpg')
+chicken3=URI.open('https://yep-seed.s3.amazonaws.com/99Chicken3.jpg')
+chicken4=URI.open('https://yep-seed.s3.amazonaws.com/99Chicken4.jpg')
+chicken5=URI.open('https://yep-seed.s3.amazonaws.com/99Chicken5.jpg')
+b6.photos.attach(io: chicken1, filename: '99Chicken1.jpg')
+b6.photos.attach(io: chicken2, filename: '99Chicken2.jpg')
+b6.photos.attach(io: chicken3, filename: '99Chicken3.jpg')
+b6.photos.attach(io: chicken4, filename: '99Chicken4.jpg')
+b6.photos.attach(io: chicken5, filename: '99Chicken5.jpg')
+
+philz1=URI.open('https://yep-seed.s3.amazonaws.com/Philz1.jpg')
+philz2=URI.open('https://yep-seed.s3.amazonaws.com/Philz2.jpg')
+philz3=URI.open('https://yep-seed.s3.amazonaws.com/Philz3.jpg')
+philz4=URI.open('https://yep-seed.s3.amazonaws.com/Philz4.jpg')
+philz5=URI.open('https://yep-seed.s3.amazonaws.com/Philz5.jpg')
+b7.photos.attach(io: philz1, filename: 'Philz1.jpg')
+b7.photos.attach(io: philz2, filename: 'Philz2.jpg')
+b7.photos.attach(io: philz3, filename: 'Philz3.jpg')
+b7.photos.attach(io: philz4, filename: 'Philz4.jpg')
+b7.photos.attach(io: philz5, filename: 'Philz5.jpg')
+
+ramen1=URI.open('https://yep-seed.s3.amazonaws.com/Ramen1.jpg')
+ramen2=URI.open('https://yep-seed.s3.amazonaws.com/Ramen2.jpg')
+ramen3=URI.open('https://yep-seed.s3.amazonaws.com/Ramen3.jpg')
+ramen4=URI.open('https://yep-seed.s3.amazonaws.com/Ramen4.jpg')
+ramen5=URI.open('https://yep-seed.s3.amazonaws.com/Ramen5.jpg')
+b8.photos.attach(io: ramen1, filename: 'Ramen1.jpg')
+b8.photos.attach(io: ramen2, filename: 'Ramen2.jpg')
+b8.photos.attach(io: ramen3, filename: 'Ramen3.jpg')
+b8.photos.attach(io: ramen4, filename: 'Ramen4.jpg')
+b8.photos.attach(io: ramen5, filename: 'Ramen5.jpg')
+
+pho1=URI.open('https://yep-seed.s3.amazonaws.com/Pho1.jpg')
+pho2=URI.open('https://yep-seed.s3.amazonaws.com/Pho2.jpg')
+pho3=URI.open('https://yep-seed.s3.amazonaws.com/Pho3.jpg')
+pho4=URI.open('https://yep-seed.s3.amazonaws.com/Pho4.jpg')
+pho5=URI.open('https://yep-seed.s3.amazonaws.com/Pho5.jpg')
+b9.photos.attach(io: pho1, filename: 'Pho1.jpg')
+b9.photos.attach(io: pho2, filename: 'Pho2.jpg')
+b9.photos.attach(io: pho3, filename: 'Pho3.jpg')
+b9.photos.attach(io: pho4, filename: 'Pho4.jpg')
+b9.photos.attach(io: pho5, filename: 'Pho5.jpg')
+
+butchers1=URI.open('https://yep-seed.s3.amazonaws.com/10Butchers1.jpg')
+butchers2=URI.open('https://yep-seed.s3.amazonaws.com/10Butchers2.jpg')
+butchers3=URI.open('https://yep-seed.s3.amazonaws.com/10Butchers3.jpg')
+butchers4=URI.open('https://yep-seed.s3.amazonaws.com/10Butchers4.jpg')
+b10.photos.attach(io: butchers1, filename: '10Butchers1.jpg')
+b10.photos.attach(io: butchers2, filename: '10Butchers2.jpg')
+b10.photos.attach(io: butchers3, filename: '10Butchers3.jpg')
+b10.photos.attach(io: butchers4, filename: '10Butchers4.jpg')
+
 
 reveiw1 = Review.create!(
     body: "this place was really awesome!",

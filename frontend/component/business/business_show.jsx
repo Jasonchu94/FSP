@@ -32,7 +32,7 @@ class BusinessShow extends React.Component{
         if (rating >=4 && rating < 4.5) return <img src={window.rating4}></img>
         if (rating >=4.5 && rating < 5) return <img src={window.rating45}></img>
         if (rating === 5) return <img src={window.rating5}></img>   
-        if (rating === 0) return <img src={window.rating0}></img> 
+        return <img src={window.rating0}></img> 
     }
 
     getRating(business){
@@ -51,8 +51,8 @@ class BusinessShow extends React.Component{
         const {business} = this.props;
 
         return(`
-         ${business.opentime < 12 ? business.opentime : business.opentime-12}:00
-            ${business.opentime > 12 ? "PM" : "AM"} -
+         ${business.opentime <= 12 ? business.opentime : business.opentime-12}:00
+            ${business.opentime >= 12 ? "PM" : "AM"} -
             ${business.closetime > 12 ? business.closetime -12 : business.closetime}:00 
             PM
 
