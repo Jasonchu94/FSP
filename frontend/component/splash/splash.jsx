@@ -6,6 +6,7 @@ import NavBarDropdown from '../nav_bar/navbar_dropdown';
 import About from '../about/about';
 import BusinessIndex from '../business/business_index';
 import BusinessShowContainer from '../business/business_show_container'
+import SanJoseContainer from './sanjose_container'
 
 class Splash extends React.Component{
 
@@ -13,9 +14,9 @@ class Splash extends React.Component{
         this.props.fetchBusinesses();
     }
     render(){
-        debugger
+        // debugger
         return(
-            <div className='splash-top-container'>
+            <div className='main-splash'>
                 <div className="splash-container">
                     <NavBarContainer/>
                     <div className="splash-background-image">
@@ -28,9 +29,12 @@ class Splash extends React.Component{
                         <SearchBar/>           
                     </div>     
                 </div>
-                <div className='splash-businesses'>
-                    <h1 className='splash-business-title'>Yep San Jose</h1>
-                      
+                <div className='splash-businesses'>                    
+                    <SanJoseContainer/>
+                </div>
+                <div className='splash-categories'>
+                   {/* <Categories/> */}
+
                 </div>
                 <footer className='about-links'>
                     <About/>
