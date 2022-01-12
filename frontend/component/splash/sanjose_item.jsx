@@ -52,7 +52,8 @@ class SanJoseItem extends React.Component{
                         {this.totalReviews}
                     </div> 
                     <div className='san-jose-categories'>
-                        {business.categories.map((category, key) => category.charAt(0).toUpperCase() + category.slice(1) + (key===business.categories.length-1 ? "" : ", "))}
+                        {business.categories[0].charAt(0).toUpperCase() + business.categories[0].slice(1) + "," + 
+                        business.categories[1].charAt(0).toUpperCase() + business.categories[1].slice(1)}
                     </div>
                     <div className='san-jose-address'>
                         {business.city},{business.state}

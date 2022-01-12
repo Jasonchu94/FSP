@@ -22,34 +22,34 @@ class NavBarDropdown extends React.Component{
         let profile = window.pepeprofile
         if (this.props.icon) {
             image = <img className='profile-pic' src={window.profile}></img>
-            profile=''
+            profile=null
         }
         if (currentUser){
                 return(
-                        <div className='dropdown-container' onBlur={this.handleBlur}>
+                        <div className='dropdown-arrow'>
                             <img className='profile-pic' src={window.profile}></img>
-                            <button onClick={this.handleClick} onBlur={this.handleBlur}>{image}    
+                            <button className='dropdown-marker' onClick={this.handleClick} >{image}  
+                            </button>
                                 <div id='dropdown-container' className='dropdown-container' className='clear'>
-                                    <div>
-                                        <img className='profile-pic' src={profile}></img>
+                                    <div className='dropdown-box' onBlur={this.handleBlur}>
+                                        <img className='profile-pic' src={window.profile}></img>
                                         <li className='profile-name'>
                                             {currentUser.first_name.charAt(0).toUpperCase() + currentUser.first_name.slice(1)} {currentUser.last_name.charAt(0).toUpperCase() + "."}
                                         </li>                            
                                     </div>
-                                        <hr></hr>
-                                    <div className='drowndown-container2'>
+                                       
+                                    <div className='dropdown-container2'>
                                         <span>About Me</span>
                                                 <br></br>
                                         <span>Settings</span>
                                                 <br></br>
                                                 <hr></hr>
-                                        <span onClick={this.props.logout}>Logout</span>
+                                        <button className='dropdown-logout' onClick={this.props.logout}>Logout</button>
                                     </div>
 
                                 </div>
                                 
                                  
-                            </button>
                         </div>
 
                 )

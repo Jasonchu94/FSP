@@ -56,7 +56,7 @@ class BusinessIndexItem extends React.Component{
                     <div className='business-info-container'>
                         <div className='business-name'>
                             
-                            {search ? search.indexOf(business)+1 : business.id}.{business.name}
+                            {search ? search.indexOf(business)+1 : business.id}.&nbsp;{business.name}
                         </div>
                         <br></br>
                         <div className='rating-image'>
