@@ -172,3 +172,18 @@ box-sizing: border-box;
     display: block;
   
 }
+
+.sj-item:hover{
+    cursor: pointer;
+}
+
+.review-business-title{
+    text-decoration: none;
+    :hover{
+        cursor: pointer;
+    }
+}
+
+.san-jose-link{
+    text-decoration: none;
+}

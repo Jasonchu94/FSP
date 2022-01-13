@@ -214,3 +214,37 @@
     display: flex;
     justify-content: space-between;
 }
+
+.right-business-container{
+    border: 1px solid lightgray;
+    border-radius: 5px;
+    width: 245px;
+    > div{
+        padding-top: 1%;
+        display: flex;
+        // flex-direction: column;
+        justify-content: space-evenly;
+
+    }
+}
+.business-phone{
+    margin-left: 80px;
+    border-bottom: color rgba(139, 134, 134, 0.966) ;
+}
+.business-website-link{
+    text-decoration: none;
+    color: rgba(139, 134, 134, 0.966);
+    
+}
+
+.website-photo{
+    margin-left: 30px;
+}
+.directions-title{
+    margin-right: 60%;
+    white-space: nowrap;
+    color: teal;
+}
+.business-address{
+    color: rgba(139, 134, 134, 0.966);
+}

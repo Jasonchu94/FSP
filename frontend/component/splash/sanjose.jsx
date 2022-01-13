@@ -6,7 +6,7 @@ class SanJose extends React.Component{
 
     componentWillMount(){
         this.props.fetchBusinesses();
-        this.props.fetchReviews();
+        // this.props.fetchReviews();
     }
 
     shuffle(arr){
@@ -34,7 +34,7 @@ class SanJose extends React.Component{
                 <div className='yep-san-jose-container'>
                 <div className='san-jose-container'>
                     <h1 className='splash-business-title'>Yep San Jose</h1>
-                    {randomBusiness.length >= 1 ? randomBusiness.map(business =>(
+                    {randomBusiness.length > 1 ? randomBusiness.map(business =>(
                         <SanJoseItem
                         business={business}
                         key={business.id}

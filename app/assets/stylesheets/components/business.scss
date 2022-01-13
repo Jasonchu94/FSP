@@ -111,3 +111,15 @@ h1{
     padding-bottom: 5%;
     font-weight: bold;
 }
+
+.business-name:hover{
+    text-decoration: underline;
+}
+.business-index-item{
+    border-radius: 5px;
+}
+
+.business-index-item:hover{
+    box-shadow: 2px 2px 2px 2px lightgray;
+    cursor: pointer;
+}
