@@ -19,14 +19,10 @@ const Navbar= ({currentUser, logout, notSplash}) => {
 
     return (
         <div className='nav-bar'>
-            <div className="nav-links">
-                <Link>Write a Review</Link>
-                &nbsp;
-                <Link>Events</Link>
-                &nbsp;
-                <Link>Talk</Link>
-                &nbsp;
-                <Link>Yelp for Business</Link>
+            <div className="nav-links">            
+                <Link to='/businesses'>Businesses</Link>
+                &nbsp;&nbsp;
+                <Link to={`/businesses/${Math.floor(Math.random()*10)}`}>I'm Feeling Hungry</Link>
             </div>
             <div className='right-nav-bar'>
                 {display}

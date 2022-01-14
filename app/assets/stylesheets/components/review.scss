@@ -137,3 +137,25 @@ textarea{
     width: 50%
 }
 
+.edit-elipses{
+    position: absolute;
+    margin-left: 50%;
+    font-size: 10px;
+    font-weight: bold;
+    > .show{
+        display: flex;
+        flex-direction: column;
+        justify-content: space-evenly;
+        >button{
+            background-color: white;
+            color: grey;
+            border: none;
+
+        }
+    }
+}
+
+.ellipses-image{
+    width: 20px;
+    margin-right: 10%;
+}

@@ -67,7 +67,7 @@ class SearchResult extends React.Component{
                         
                     </div>
                     <div className='business-list-container'>
-                        <div className='business-filter'>Filter HERE</div>
+                        <div className='business-filter'>Filter coming soon!</div>
                         <div className='business-list'>
                     
                             <h1 className='results'>All Results</h1>

@@ -5,7 +5,7 @@ class Map extends React.Component{
     componentDidMount(){
        
         const mapOptions = {
-            center: { lat: 37.104990, lng: -122.010750 }, 
+            center: { lat: 37.104990, lng: -122.0050 }, 
             zoom: 11
           };
           this.map = new google.maps.Map(this.mapNode, mapOptions)

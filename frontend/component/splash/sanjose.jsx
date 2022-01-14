@@ -34,15 +34,15 @@ class SanJose extends React.Component{
                 <div className='yep-san-jose-container'>
                 <div className='san-jose-container'>
                     <h1 className='splash-business-title'>Yep San Jose</h1>
-                    {randomBusiness.length > 1 ? randomBusiness.map(business =>(
+                    {randomBusiness.length === 0 ?  null : randomBusiness.map(business =>(
                         <SanJoseItem
                         business={business}
-                        key={business.id}
+                        key={Math.random()}
                         reviews={reviews}
                         fetchBusinesses={this.props.fetchBusinesses}
                         
                         />
-                        )) : null}
+                        ))}
                 </div>              
                 <Link className='san-jose-link' to='/businesses'>See more businesses in San Jose</Link>               
             </div>

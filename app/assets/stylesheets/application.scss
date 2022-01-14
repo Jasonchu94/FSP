@@ -26,14 +26,57 @@
 @import 'components/about.scss';
 @import 'components/business_show.scss';
 @import 'components/business.scss';
-@import 'components/review.scss';
+@import 'components/review.scss';  
 
 //review
 
-.edit-elpises{
-    position: absolute;
-    right: 0;
+
+
+.input-near-nonsplash{
+    border: none;
+    box-shadow: 0 1px 5px rgba(0, 0, 0, 0.12), 0 1px 3px rgba(0, 0, 0, 0.24);
+}
+.input-find-nonsplash{
+    border: none;
+    box-shadow: 0 1px 5px rgba(0, 0, 0, 0.12), 0 1px 3px rgba(0, 0, 0, 0.24);
+    width: 99%;
 }
 
 
+.review-link{
+    text-decoration: none;
+}
 
+.no-reviews-container{
+ 
+    padding-top: 5%;
+    border: 1px solid lightgray;
+    height: 20%;
+    width: 50%;
+    display: flex;
+
+    
+}
+
+.review-link-container{
+    height: 75%;
+    width: 50%;
+    display: flex;
+    justify-content: center;
+    padding-bottom: 20%;
+    > a{
+        font-family: $main-font;
+        font-size: 22px; 
+        text-decoration: none;
+    }
+}
+.no-reviews-link{
+    font-family: $main-font;
+    font-size: 22px;    
+    text-align: center;
+  
+}
+
+a {
+    text-decoration: none;
+}

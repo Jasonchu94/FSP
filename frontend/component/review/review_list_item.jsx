@@ -6,6 +6,10 @@ class ReviewListItem extends React.Component{
     constructor(props){
         super(props)
 
+        this.state = {
+            clicked: false
+        }
+        this.handleClick = this.handleClick.bind(this);
         
     }
     componentWillMount(){
@@ -29,15 +33,22 @@ class ReviewListItem extends React.Component{
         this.props.history.push(`${this.props.business.id}/reviews/${this.props.review.id}/edit`)
     }
 
+    handleClick(e){
+        if (this.state.clicked === false){
+            return this.setState({clicked: true})
+        } else { return this.setState({clicked:false})}
+    }
     reviewOwner(){
         const{currentUser, review} = this.props;
         if (!currentUser) return null;
       
         if(currentUser.id === review.user_id){
             return(
-                <div className='edit-elipses'> ...
-                    <button onClick={() =>this.editReview()}>Edit</button>
-                    <button onClick={() => this.deleteReview()}>Delete</button>
+                <div className='edit-elipses' onClick={this.handleClick}><img className='ellipses-image'src={window.ellipses}></img>
+                    <div className={this.state.clicked ? "show" : "clear"}>
+                        <button onClick={() =>this.editReview()}>Edit</button>
+                        <button onClick={() => this.deleteReview()}>Delete</button>
+                    </div>
                 </div>
             )
         }

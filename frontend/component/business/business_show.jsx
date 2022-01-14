@@ -67,8 +67,8 @@ class BusinessShow extends React.Component{
                     <img className='website-photo' src={window.website}></img>
                 </div>
             )
-        } else{ return null
-        }
+        } else{ return null}
+        
     }
 
     writeReview(){
@@ -143,15 +143,16 @@ class BusinessShow extends React.Component{
                         
                         <div className='business-show-info-container'>
                                 <div className='right-business-container'>
-                                <p className='business-website'>{this.businessWebsite(business)} </p>                                     
+                                    {this.businessWebsite(business)}                                   
                                     <div className='business-phone-number'>
                                         <div>{business.phone_number} </div>
                                         <img className='business-phone' src={window.phone}></img>
+                                    </div>                                                                
+                                    <div className='directions-title'>
+                                        <div className='get-directions'><p>Get Directions</p> <img  className='directions-pic' src={window.yepdirections}></img></div>
+                                        <div className='business-address'>{business.address}, {business.city}, {business.zipcode} </div>
+                                    
                                     </div>
-                                    <br></br>                                
-                                   
-                                    <div className='directions-title'>Get Directions</div>
-                                    <div className='business-address'>{business.address}, {business.city}, {business.zipcode} <img src={window.yepdirections}></img></div>
 
                                 </div>
                         </div>

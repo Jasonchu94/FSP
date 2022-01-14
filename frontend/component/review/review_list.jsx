@@ -17,11 +17,15 @@ class ReviewList extends React.Component{
     render(){
         const {business, currentUser, reviews, rating, fetchReviews,sessionId} = this.props
         
-        if (Object.keys(reviews).length===0 ){
-            return(
-                <div>Be the first to review</div>
-            )
-        }else if( business.reviews[0] === undefined) return null;
+        if( business.reviews[0] === undefined) return(
+            <div className='no-reviews-container'>
+                <div className='review-link-container'>
+                    <p className=' no-reviews-link'>Be the first to </p>&nbsp;
+                    <Link to={`/businesses/${business.id}/reviews/new`}>review</Link>
+
+                </div>
+            </div>
+        );
         if(business.reviews[0].author){
 
             return(
@@ -31,7 +35,7 @@ class ReviewList extends React.Component{
                             <div className='review-profile'>
                                 <img src={window.profile}></img>&nbsp;
                                 {currentUser ? currentUser.first_name.charAt(0).toUpperCase() + currentUser.first_name.slice(1) + " " +currentUser.last_name.charAt(0).toUpperCase() + ".": 
-                                <div> Please <Link to='/login'>Login</Link> to start your review</div>
+                                <div> Please <Link className='review-link' to='/login'>Login</Link> to start your review</div>
                                 }
                             </div>
                             <div className='review-stars-link'>
@@ -39,7 +43,7 @@ class ReviewList extends React.Component{
                                     <img src={window.rating0}></img> 
                                 </div>
                                 <div>
-                                    Start your review for {business.name}
+                                    Start your <Link to={`/businesses/${business.id}/reviews/new`}>review</Link> for {business.name}
                                 </div>                        
                             </div>
                         </div>
