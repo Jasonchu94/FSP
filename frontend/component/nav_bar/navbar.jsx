@@ -22,7 +22,7 @@ const Navbar= ({currentUser, logout, notSplash}) => {
             <div className="nav-links">            
                 <Link to='/businesses'>Businesses</Link>
                 &nbsp;&nbsp;
-                <Link to={`/businesses/${Math.floor(Math.random()*10)}`}>I'm Feeling Hungry</Link>
+                <Link to={`/businesses/${Math.floor(Math.random()*9 + 1)}`}>I'm Feeling Hungry</Link>
             </div>
             <div className='right-nav-bar'>
                 {display}
