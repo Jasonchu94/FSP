@@ -17,7 +17,7 @@ class Map extends React.Component{
     }
 
     render(){
-    //   debugger
+  
 
         return(
             <div id='map'className='map-container'ref={ map => this.mapNode = map }>

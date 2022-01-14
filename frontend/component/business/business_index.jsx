@@ -16,9 +16,9 @@ class BusinessIndex extends React.Component{
       this.props.fetchReviews();
     }
     render(){
-        // debugger
+   
         const {businesses, reviews} = this.props;
-        // debugger
+       
         if(businesses.length === 0) return null;
         return(
             <div className='business-index-container'>               

@@ -7,7 +7,7 @@ export default class Marker{
 
     updateMarkers(businesses){
         const busObj = {};
-        // debugger
+        
        businesses.forEach(business => busObj[business.id] = business)
 
        businesses
@@ -17,13 +17,13 @@ export default class Marker{
 
     createMarkerFromBusiness(business){
         const location = new google.maps.LatLng(business.latitude, business.longitude)
-        // debugger
+        
         const marker = new google.maps.Marker({
             position: location, 
             map: this.map, 
             businessId: business.id
         })
-        // debugger
+     
         this.markers[marker.businessId] = marker; 
         // marker.setMap(this.map)
     }

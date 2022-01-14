@@ -16,7 +16,7 @@ class BusinessIndexItem extends React.Component{
     }
 
     ratingPhoto(rating){     
-        // debugger 
+   
         if(rating >= 0 && rating < 1.5) return <img src={window.rating1}></img>
         if (rating >= 1.5 && rating < 2) return <img src={window.rating15}></img>
         if (rating >= 2 && rating <2.5) return <img src={window.rating2}></img>
@@ -32,7 +32,7 @@ class BusinessIndexItem extends React.Component{
     getRating(business){
         this.totalReviews = 0;
         let totalRating=0;
-        // debugger
+       
         business.reviews.map(review=>(
             totalRating += review.rating,
             this.totalReviews +=1

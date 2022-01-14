@@ -39,8 +39,7 @@ class SearchResult extends React.Component{
         
             return(
                 this.searchResults.map(business => (
-                    <BusinessIndexItem business={business} key={business.id} businesses={businesses} search={this.searchResults}/>
-                )       
+                    <BusinessIndexItem business={business} key={business.id} businesses={businesses} search={this.searchResults}/>)       
                 )
                 
             )

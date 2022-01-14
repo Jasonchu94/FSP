@@ -21,8 +21,8 @@ class NavBarDropdown extends React.Component{
     }
     toggledrop(){
         if (this.state.dropdown === false) {
-        return this.setState({dropdown: true})
-    }else {return this.setState({dropdown:false})}
+         this.setState({dropdown: true})
+    }else { this.setState({dropdown:false})}
     }
 
     render (){

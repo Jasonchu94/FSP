@@ -34,10 +34,12 @@
 
 .input-near-nonsplash{
     border: none;
+    border-radius: 5px;
     box-shadow: 0 1px 5px rgba(0, 0, 0, 0.12), 0 1px 3px rgba(0, 0, 0, 0.24);
 }
 .input-find-nonsplash{
     border: none;
+    border-radius: 5px;
     box-shadow: 0 1px 5px rgba(0, 0, 0, 0.12), 0 1px 3px rgba(0, 0, 0, 0.24);
     width: 99%;
 }
@@ -77,6 +79,19 @@
   
 }
 
-a {
-    text-decoration: none;
+
+
+
+// review list
+.rating-stars{
+    display: flex;
 }
+.blank{
+    display: flex;
+    background-color: lightgray;
+    border:.1px solid gray;
+    border-radius: 5px;
+    height: 30px;
+    width: 30px;
+}
+

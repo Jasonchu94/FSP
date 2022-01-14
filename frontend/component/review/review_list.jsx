@@ -6,12 +6,18 @@ class ReviewList extends React.Component{
     constructor(props){
         super(props);
     
+        this.setColor = this.setColor.bind(this);
     // this.state = this.props.reviews
         
     }
 
     componentDidMount(){
         this.props.fetchReviews();
+    }
+
+    setColor(num){
+       
+        document.getElementById(`${num}star`).className=`${num}highlight`
     }
  
     render(){
@@ -27,7 +33,7 @@ class ReviewList extends React.Component{
             </div>
         );
         if(business.reviews[0].author){
-
+          
             return(
                 <div>   
                     <div className='review-list-container'>
@@ -39,8 +45,12 @@ class ReviewList extends React.Component{
                                 }
                             </div>
                             <div className='review-stars-link'>
-                                <div>
-                                    <img src={window.rating0}></img> 
+                                <div className='rating-stars'>
+                                    <div id='1star'className="blank"  onClick={()=>this.setColor(1)} onMouseOver={()=>this.setColor(1)}><img src={window.singleStar}></img></div>
+                                    <div id='2star'className="blank"  onClick={()=>this.setColor(2)} onMouseOver={()=>this.setColor(2)}><img src={window.singleStar}></img></div>
+                                    <div id='3star'className="blank"  onClick={()=>this.setColor(3)} onMouseOver={()=>this.setColor(3)}><img src={window.singleStar}></img></div>
+                                    <div id='4star'className="blank"  onClick={()=>this.setColor(4)} onMouseOver={()=>this.setColor(4)}><img src={window.singleStar}></img></div>
+                                    <div id='5star'className="blank"  onClick={()=>this.setColor(5)} onMouseOver={()=>this.setColor(5)}><img src={window.singleStar}></img></div>
                                 </div>
                                 <div>
                                     Start your <Link to={`/businesses/${business.id}/reviews/new`}>review</Link> for {business.name}

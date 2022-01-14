@@ -22,14 +22,14 @@ class SanJose extends React.Component{
     render(){
         const {businesses, reviews} = this.props;
         let randomBusiness = [];
-        // debugger
+       
         if (businesses.length === 0) {
             return null} else{
             randomBusiness.push(this.shuffle(businesses).shift())
             randomBusiness.push(this.shuffle(businesses).shift())
             randomBusiness.push(this.shuffle(businesses).shift())
 
-            // debugger
+         
             return(
                 <div className='yep-san-jose-container'>
                 <div className='san-jose-container'>
