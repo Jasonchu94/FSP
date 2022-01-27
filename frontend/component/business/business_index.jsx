@@ -31,7 +31,9 @@ class BusinessIndex extends React.Component{
                     </div>
                     <div className='business-list-container'> 
                         <div className='business-filter'>
-                            Filter coming soon!
+                            Chinese
+                            Japanese
+                            Price: 
                         </div>
                         <div className='business-list'>
                             <h1 className='results'>All results</h1>
