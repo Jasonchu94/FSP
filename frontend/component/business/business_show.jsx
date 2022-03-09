@@ -4,6 +4,7 @@ import ReviewList from '../review/review_list';
 import SearchBar from '../search_bar/search_bar'
 import NavBarDropdown from '../nav_bar/navbar_dropdown';
 import { Link, withRouter } from 'react-router-dom';
+import About from '../about/about';
 class BusinessShow extends React.Component{
 
     constructor(props){
@@ -157,6 +158,7 @@ class BusinessShow extends React.Component{
                                 </div>
                         </div>
                     </div>
+                    
                 </div>
             )
 

@@ -26,8 +26,8 @@ const App =() =>(
             <ProtectedRoute exact path='/businesses/:businessId/reviews/new' component={ReviewFormContainer}/>
             <ProtectedRoute exact path ='/businesses/:businessId/reviews/:reviewId/edit' component={EditReviewFormContainer}/>
         </Switch>   
-        {/* <About/> */}
-     
+        
+        
     </div>
 
 

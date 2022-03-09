@@ -37,8 +37,8 @@ class NavBarDropdown extends React.Component{
                         <div className='dropdown-arrow'>
                             {this.props.icon ? null :<img className='profile-pic' src={window.profile}></img>}
                             <button className={this.props.icon ? 'clear' : 'dropdown-marker'} onClick={this.toggledrop} >{image} 
-                            </button>{image} 
-                                <div id='dropdown-container' className='dropdown-container' onMouseOut={this.toggledrop}className={this.state.dropdown ? "show" : 'clear'} >
+                            </button>
+                                <div id='dropdown-container' onMouseOut={this.toggledrop}className={this.state.dropdown ? "show" : 'clear'} >
                                     <div className='dropdown-box' onBlur={this.handleBlur}>
                                         <img className='profile-pic' src={window.profile}></img>
                                         <li className='profile-name'>
