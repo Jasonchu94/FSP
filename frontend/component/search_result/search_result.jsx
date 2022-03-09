@@ -56,7 +56,7 @@ class SearchResult extends React.Component{
     }
     render(){
         const {business, businesses} = this.props
-        debugger
+        // debugger
         return(
             <div className='business-index-container'>
                   <div className='business-nav-bar'>
