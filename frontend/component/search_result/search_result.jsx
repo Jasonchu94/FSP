@@ -21,7 +21,7 @@ class SearchResult extends React.Component{
  
     
     filterSearch(){
-        debugger
+      
         const {location, businesses} = this.props
     
         let url = location.search.split("?find=")    

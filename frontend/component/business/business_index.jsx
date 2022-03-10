@@ -4,6 +4,7 @@ import SearchBar from '../search_bar/search_bar'
 import NavBarDropdown from '../nav_bar/navbar_dropdown'
 import BusinessIndexItem from './business_index_item'
 import Map from '../map/map';
+import BusinessFilter from '../filter/filter';
 class BusinessIndex extends React.Component{
 
     constructor(props){
@@ -20,6 +21,8 @@ class BusinessIndex extends React.Component{
         const {businesses, reviews} = this.props;
         // debugger
         if(businesses.length === 0) return null;
+        // const categories = businesses.map(business=> business.categories).flat().filter(category=>category)
+        // debugger
         return(
             <div className='business-index-container'>               
                     <div className='business-nav-bar'>
@@ -31,9 +34,7 @@ class BusinessIndex extends React.Component{
                     </div>
                     <div className='business-list-container'> 
                         <div className='business-filter'>
-                            Chinese
-                            Japanese
-                            Price: 
+                            <BusinessFilter businesses={businesses}/>
                         </div>
                         <div className='business-list'>
                             <h1 className='results'>All results</h1>
