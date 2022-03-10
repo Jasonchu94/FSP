@@ -64,7 +64,7 @@ class BusinessShow extends React.Component{
         if(business.website){
             let original = business.website
             business.website = `/${business.website}`
-            debugger
+            // debugger
             return(
                 <div className='business-website'>
                     <a className='business-website-link' target='_blank' href={business.website}>{original.slice(2)}</a>
