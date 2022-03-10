@@ -12,7 +12,7 @@ class ReviewListItem extends React.Component{
         this.handleClick = this.handleClick.bind(this);
         
     }
-    componentWillMount(){
+    componentDidMount(){
         this.props.fetchReviews();
         this.props.fetchBusiness(this.props.match.params.businessId)
     }

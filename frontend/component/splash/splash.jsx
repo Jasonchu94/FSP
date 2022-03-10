@@ -10,7 +10,7 @@ import SanJoseContainer from './sanjose_container'
 
 class Splash extends React.Component{
 
-    componentWillMount(){
+    componentDidMount(){
         this.props.fetchBusinesses();
     }
     render(){

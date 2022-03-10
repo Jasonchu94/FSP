@@ -13,7 +13,7 @@ class SearchResult extends React.Component{
         this.searchResults = [];
     }
 
-    componentWillMount(){
+    componentDidMount(){
         this.props.fetchReviews();
         this.props.fetchBusinesses();
     }
@@ -21,6 +21,7 @@ class SearchResult extends React.Component{
  
     
     filterSearch(){
+        debugger
         const {location, businesses} = this.props
     
         let url = location.search.split("?find=")    
@@ -31,7 +32,9 @@ class SearchResult extends React.Component{
         businesses.map(business => {   
             if (business.name.toLowerCase().includes(find)  
                 ||
-            business.address.toLowerCase().includes(near) && near !=='' && !this.searchReults.includes(business.id)) this.searchResults.push(business)
+            business.address.toLowerCase().includes(near) && near !=='' && !this.searchReults.includes(business.id))this.searchResults.push(business)
+
+            if (business.categories.includes(find)) this.searchResults.push(business)
             
 
         })}      
@@ -77,7 +80,7 @@ class SearchResult extends React.Component{
 
                         </div>
                         <div className='business-map'>
-                         <Map businesses={businesses}/>
+                            <Map businesses={businesses}/>
                         </div>
                        
                     </div>  

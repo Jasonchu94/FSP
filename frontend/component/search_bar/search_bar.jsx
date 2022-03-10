@@ -16,15 +16,19 @@ class SearchBar extends React.Component{
     }
 
     update(field) {
+        debugger
         return e => this.setState({
             [field] : e.currentTarget.value
         })
     }
 
     handleSubmit(e){
+        debugger
         e.preventDefault();
-        if (this.state.find === '' && this.state.near === '') return this.props.history.push('/businesses')
-        this.props.history.push(`/search?find=${this.state.find}near=${this.state.near}`)
+        if (this.state.find === '' && this.state.near === '') {this.props.history.push('/businesses')}
+        else{
+            this.props.history.push(`/search?find=${this.state.find}near=${this.state.near}`)
+        }
     }
 
     render(){

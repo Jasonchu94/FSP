@@ -4,7 +4,7 @@ import SanJoseItem from './sanjose_item'
 
 class SanJose extends React.Component{
 
-    componentWillMount(){
+    componentDidMount(){
         this.props.fetchBusinesses();
         // this.props.fetchReviews();
     }
