@@ -43,10 +43,10 @@ class BusinessIndexItem extends React.Component{
    
     render(){
         const {business, businesses, search,reviews} = this.props
-     
+        
         let randomPhoto = Math.floor(Math.random()*business.photoUrls.length)
         let randomReview = Math.floor(Math.random()*business.reviews.length)
-       
+    //    debugger
         return(
             <div className='business-index-item-container' onClick={this.handleClick}>
                 <div className='business-index-item'>

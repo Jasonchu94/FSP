@@ -21,7 +21,7 @@ class BusinessIndex extends React.Component{
         const {businesses, reviews} = this.props;
         // debugger
         if(businesses.length === 0) return null;
-        // const categories = businesses.map(business=> business.categories).flat().filter(category=>category)
+        // const categ  ories = businesses.map(business=> business.categories).flat().filter(category=>category)
         // debugger
         return(
             <div className='business-index-container'>               

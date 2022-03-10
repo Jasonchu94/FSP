@@ -4,6 +4,7 @@ import SearchBar from '../search_bar/search_bar'
 import BusinessIndexItem from '../business/business_index_item'
 import NavBarDropdown from '../nav_bar/navbar_dropdown';
 import Map from '../map/map';
+import BusinessFilter from '../filter/filter';
 class SearchResult extends React.Component{
 
     constructor(props){
@@ -26,23 +27,32 @@ class SearchResult extends React.Component{
     
         let url = location.search.split("?find=")    
         let [find, near] = url[1].split('near=')
-       
+        let price = location.search.split('=')[3]
+        // debugger
     
         if (this.props.businesses){
         businesses.map(business => {   
-            if (business.name.toLowerCase().includes(find)  
+            // debugger
+            if (business.name.toLowerCase().includes(find) && find !==''
                 ||
             business.address.toLowerCase().includes(near) && near !=='' && !this.searchReults.includes(business.id))this.searchResults.push(business)
 
-            if (business.categories.includes(find)) this.searchResults.push(business)
+            if (business.categories.includes(find) || business.categories.includes(find.toLowerCase()))  this.searchResults.push(business)
+            if (business.price === price) this.searchResults.push(business)
             
-
         })}      
         if (this.searchResults.length !== 0){
-        
+            // debugger
+            // this.searchResults.filter(business=>business)
+            const finalResult=[]
+            this.searchResults.map(business => {
+                if(!finalResult.includes(business)) {finalResult.push(business)}
+                else{null}
+            })
+            // debugger
             return(
-                this.searchResults.map(business => (
-                    <BusinessIndexItem business={business} key={business.id} businesses={businesses} search={this.searchResults}/>
+                finalResult.map(business => (
+                    <BusinessIndexItem business={business} key={business.id} businesses={businesses} search={finalResult}/>
                 )       
                 )
                 
@@ -70,7 +80,10 @@ class SearchResult extends React.Component{
                         
                     </div>
                     <div className='business-list-container'>
-                        <div className='business-filter'>Filter coming soon!</div>
+                        <div className='business-filter'>
+                            <BusinessFilter/>
+
+                        </div>
                         <div className='business-list'>
                     
                             <h1 className='results'>All Results</h1>
