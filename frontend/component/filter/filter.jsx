@@ -23,15 +23,21 @@ class BusinessFilter extends React.Component{
     render(){
         return(
             <div className='filter-container'>
-                Filters
-                <div className='price-filter'>
-                    <button value='$' onClick={this.priceFilter}>$</button>
-                    <button value='$$' onClick={this.priceFilter}>$$</button>                   
-                    <button value='$$$' onClick={this.priceFilter}>$$$</button>                    
+                <div className='filter-title'>
+                    Filters
                 </div>
-               
-                <div className='category-filter'>
+                
+                <div className='price-filter'>
                     
+                        
+                        <button value='$' onClick={this.priceFilter}>$</button>
+                        <button value='$$' onClick={this.priceFilter}>$$</button>                   
+                        <button value='$$$' onClick={this.priceFilter}>$$$</button>                    
+                    
+                </div>
+                
+                <div className='category-filter'>
+                    Categories
                     <label for='American'><input type='checkbox' onClick={this.categoryFilter} value='American' id='American'></input>American</label>
                     
                     <label for='Chinese'><input type='checkbox' onClick={this.categoryFilter} value='Chinese'id='Chinese'></input>Chinese</label>

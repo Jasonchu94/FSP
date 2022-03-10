@@ -18,11 +18,20 @@ export default class Marker{
     createMarkerFromBusiness(business){
         const location = new google.maps.LatLng(business.latitude, business.longitude)
         // debugger
+        const infoWindow = new google.maps.InfoWindow()
         const marker = new google.maps.Marker({
             position: location, 
             map: this.map, 
-            businessId: business.id
+            label: business.id.toString(),
+            title: business.name,
+            optimized: false
         })
+
+        marker.addListener("click", () => {
+            // debugger
+            window.location.href = `#/businesses/${business.id}`
+
+        });
         // debugger
         this.markers[marker.businessId] = marker; 
         // marker.setMap(this.map)

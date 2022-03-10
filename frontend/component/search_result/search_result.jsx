@@ -35,7 +35,7 @@ class SearchResult extends React.Component{
             // debugger
             if (business.name.toLowerCase().includes(find) && find !==''
                 ||
-            business.address.toLowerCase().includes(near) && near !=='' && !this.searchReults.includes(business.id))this.searchResults.push(business)
+            business.address.toLowerCase().includes(near) && near !=='' && !this.searchResults.includes(business.id))this.searchResults.push(business)
 
             if (business.categories.includes(find) || business.categories.includes(find.toLowerCase()))  this.searchResults.push(business)
             if (business.price === price) this.searchResults.push(business)
@@ -44,15 +44,15 @@ class SearchResult extends React.Component{
         if (this.searchResults.length !== 0){
             // debugger
             // this.searchResults.filter(business=>business)
-            const finalResult=[]
+             this.finalResult=[]
             this.searchResults.map(business => {
-                if(!finalResult.includes(business)) {finalResult.push(business)}
+                if(!this.finalResult.includes(business)) {this.finalResult.push(business)}
                 else{null}
             })
             // debugger
             return(
-                finalResult.map(business => (
-                    <BusinessIndexItem business={business} key={business.id} businesses={businesses} search={finalResult}/>
+                this.finalResult.map(business => (
+                    <BusinessIndexItem business={business} key={business.id} businesses={businesses} search={this.finalResult}/>
                 )       
                 )
                 
@@ -93,7 +93,7 @@ class SearchResult extends React.Component{
 
                         </div>
                         <div className='business-map'>
-                            <Map businesses={businesses}/>
+                            <Map businesses={businesses} search={this.finalResult}/>
                         </div>
                        
                     </div>  
