@@ -62,13 +62,16 @@ class BusinessShow extends React.Component{
 
     businessWebsite(business){
         if(business.website){
+            let original = business.website
+            business.website = `/${business.website}`
+            debugger
             return(
                 <div className='business-website'>
-                    <a className='business-website-link' href={business.website}>{business.website}</a>
+                    <a className='business-website-link' target='_blank' href={business.website}>{original.slice(2)}</a>
                     <img className='website-photo' src={window.website}></img>
                 </div>
             )
-        } else{ return null}
+        } else{ return "No website available"}
         
     }
 
@@ -150,7 +153,7 @@ class BusinessShow extends React.Component{
                                         <img className='business-phone' src={window.phone}></img>
                                     </div>                                                                
                                     <div className='directions-title'>
-                                        <div className='get-directions'><p>Get Directions</p> <img  className='directions-pic' src={window.yepdirections}></img></div>
+                                        {/* <div className='get-directions'><p>Get Directions</p> <img  className='directions-pic' src={window.yepdirections}></img></div> */}
                                         <div className='business-address'>{business.address}, {business.city}, {business.zipcode} </div>
                                     
                                     </div>
