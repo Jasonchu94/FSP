@@ -41,7 +41,7 @@ class NavBarDropdown extends React.Component{
                             </button>
                                 <div id='dropdown-container' onMouseOut={this.toggledrop}className={this.state.dropdown ? "show" : 'clear'} >
                                     <div className='dropdown-box' onBlur={this.handleBlur}>
-                                        <img className='profile-pic' src={window.profile}></img>
+                                        <img className='profile-pic' id='dropdown-profile-pic' src={window.profile}></img>
                                         <span className='profile-name'>
                                             {currentUser.first_name.charAt(0).toUpperCase() + currentUser.first_name.slice(1)} {currentUser.last_name.charAt(0).toUpperCase() + "."}
                                         </span>                            

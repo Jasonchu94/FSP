@@ -165,6 +165,7 @@ a {
 
 .profile-pic{
     height: 40px;
+    top:10px;
 }
 
 .dropdown-logout{
@@ -186,4 +187,16 @@ a {
 .dropdown-about{
     font-family: $main-font;
     font-size: 20px;
+}
+.dropdown-box{
+    display: flex;
+    top: 10px;
+}
+
+#dropdown-profile-pic{
+    margin-top: 10px;
+}
+
+.profile-name{
+    margin-top: 10px;
 }
