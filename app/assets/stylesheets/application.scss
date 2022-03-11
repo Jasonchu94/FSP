@@ -151,3 +151,14 @@ a {
     height: 1000px;
     width: 100%;
 }
+
+.business-address{
+    >text{
+
+        word-wrap: break-word;
+    }
+}
+
+.right-business-container{
+    width: 150%;
+}
