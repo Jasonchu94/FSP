@@ -28,6 +28,7 @@ class NavBarDropdown extends React.Component{
         const {currentUser} = this.props
         let image = "▼"
         let profile = window.pepeprofile
+        // debugger
         if (this.props.icon) {
             image = <img  onClick={this.toggledrop} className='profile-round' src={window.profile}></img>
             profile=null
@@ -41,15 +42,15 @@ class NavBarDropdown extends React.Component{
                                 <div id='dropdown-container' onMouseOut={this.toggledrop}className={this.state.dropdown ? "show" : 'clear'} >
                                     <div className='dropdown-box' onBlur={this.handleBlur}>
                                         <img className='profile-pic' src={window.profile}></img>
-                                        <li className='profile-name'>
+                                        <span className='profile-name'>
                                             {currentUser.first_name.charAt(0).toUpperCase() + currentUser.first_name.slice(1)} {currentUser.last_name.charAt(0).toUpperCase() + "."}
-                                        </li>                            
+                                        </span>                            
                                     </div>
                                        
                                     <div className='dropdown-container2'>
-                                        <span>About Me</span>
+                                        <span className='dropdown-about'>About Me</span>
                                                 <br></br>
-                                        <span>Settings</span>
+                                        <span className='dropdown-settings'>Settings</span>
                                                 <br></br>
                                                 <hr></hr>
                                         <button className='dropdown-logout' onClick={this.props.logout}>Logout</button>

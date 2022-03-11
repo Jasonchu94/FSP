@@ -38,19 +38,19 @@ class BusinessFilter extends React.Component{
                 
                 <div className='category-filter'>
                     Categories
-                    <label for='American'><input type='checkbox' onClick={this.categoryFilter} value='American' id='American'></input>American</label>
+                    <label htmlFor='American'><input type='checkbox' onClick={this.categoryFilter} value='American' id='American'></input>American</label>
                     
-                    <label for='Chinese'><input type='checkbox' onClick={this.categoryFilter} value='Chinese'id='Chinese'></input>Chinese</label>
+                    <label htmlFor='Chinese'><input type='checkbox' onClick={this.categoryFilter} value='Chinese'id='Chinese'></input>Chinese</label>
                     
-                    <label for='Greek'><input type='checkbox' onClick={this.categoryFilter} value='Greek' id='Greek'></input>Greek</label>
+                    <label htmlFor='Greek'><input type='checkbox' onClick={this.categoryFilter} value='Greek' id='Greek'></input>Greek</label>
                     
-                    <label for='Italian'><input type='checkbox' onClick={this.categoryFilter} value='Italian'id='Italian'></input>Italian</label>
+                    <label htmlFor='Italian'><input type='checkbox' onClick={this.categoryFilter} value='Italian'id='Italian'></input>Italian</label>
                     
-                    <label for='Mexican'><input type='checkbox' onClick={this.categoryFilter}value='Mexican' id='Mexican'></input>Mexican</label>
+                    <label htmlFor='Mexican'><input type='checkbox' onClick={this.categoryFilter}value='Mexican' id='Mexican'></input>Mexican</label>
                     
-                    <label for='Japanese'><input type='checkbox' onClick={this.categoryFilter}value='Japanese' id='Japanese'></input>Japanese</label>
+                    <label htmlFor='Japanese'><input type='checkbox' onClick={this.categoryFilter}value='Japanese' id='Japanese'></input>Japanese</label>
                    
-                    <label for='Korean'> <input type='checkbox' onClick={this.categoryFilter}value='Korean' id='Korean'></input>Korean</label>
+                    <label htmlFor='Korean'> <input type='checkbox' onClick={this.categoryFilter}value='Korean' id='Korean'></input>Korean</label>
                     
                 </div>
 
