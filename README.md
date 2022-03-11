@@ -80,7 +80,7 @@ Technologies, Libraries & APIs used:
  Users will be able to leave reviews on resturant pages and see reviews from other users regardless if they are logged in. Logged in users are able to edit any reviews they have left on a business pages as denoted with the ellipses.
     
  
-    ![YepReview](https://user-images.githubusercontent.com/88340645/157933436-f3101509-6b26-4c95-a96b-017e7cca8eb4.png)
+![YepReview](https://user-images.githubusercontent.com/88340645/157933436-f3101509-6b26-4c95-a96b-017e7cca8eb4.png)
 
    
     
